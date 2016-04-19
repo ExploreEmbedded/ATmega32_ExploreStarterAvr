@@ -1,0 +1,100 @@
+
+Switch_LED.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000084  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000000d8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000000d8  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000108  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  00000144  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000087  00000000  00000000  00000164  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000053  00000000  00000000  000001eb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000009f  00000000  00000000  0000023e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  000002e0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000165  00000000  00000000  00000304  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000010  00000000  00000000  00000469  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 40 00 	jmp	0x80	; 0x80 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <main>:
+#define SWITCH 3
+
+int main(void)
+{
+	
+	DDRD |= (1<<LED);               // Configure PD5 as output to connect Led
+  6c:	8d 9a       	sbi	0x11, 5	; 17
+	DDRD &= ~(1<<SWITCH);           // Configure PD3 as input to connect switch
+  6e:	8b 98       	cbi	0x11, 3	; 17
+	PORTD = 0x08;					// Enable The PullUps of PORTC.
+  70:	88 e0       	ldi	r24, 0x08	; 8
+  72:	82 bb       	out	0x12, r24	; 18
+	while(1)
+	{
+		
+		while(((PIND)&(1<<SWITCH))==0u)     // Read the switch status and display it on Led
+  74:	83 99       	sbic	0x10, 3	; 16
+  76:	02 c0       	rjmp	.+4      	; 0x7c <main+0x10>
+		{
+			PORTD |= (1<<LED);
+  78:	95 9a       	sbi	0x12, 5	; 18
+  7a:	fc cf       	rjmp	.-8      	; 0x74 <main+0x8>
+		}
+		PORTD &= ~(1<<LED);
+  7c:	95 98       	cbi	0x12, 5	; 18
+	}
+  7e:	fa cf       	rjmp	.-12     	; 0x74 <main+0x8>
+
+00000080 <_exit>:
+  80:	f8 94       	cli
+
+00000082 <__stop_program>:
+  82:	ff cf       	rjmp	.-2      	; 0x82 <__stop_program>

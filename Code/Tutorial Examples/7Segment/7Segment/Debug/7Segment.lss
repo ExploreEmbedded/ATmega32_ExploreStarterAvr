@@ -1,0 +1,163 @@
+
+7Segment.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000de  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000010  00800060  000000de  00000152  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000162  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000194  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  000001d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000148  00000000  00000000  000001f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000000f2  00000000  00000000  00000338  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000124  00000000  00000000  0000042a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  00000550  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001be  00000000  00000000  00000584  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000005b  00000000  00000000  00000742  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  0000079d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee ed       	ldi	r30, 0xDE	; 222
+  68:	f0 e0       	ldi	r31, 0x00	; 0
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 37       	cpi	r26, 0x70	; 112
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 41 00 	call	0x82	; 0x82 <main>
+  7a:	0c 94 6d 00 	jmp	0xda	; 0xda <_exit>
+
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <main>:
+#include <avr/io.h>
+#include <util/delay.h>
+#define Segment   0x01
+
+
+int main() {
+  82:	cf 93       	push	r28
+  84:	df 93       	push	r29
+  86:	cd b7       	in	r28, 0x3d	; 61
+  88:	de b7       	in	r29, 0x3e	; 62
+  8a:	60 97       	sbiw	r28, 0x10	; 16
+  8c:	0f b6       	in	r0, 0x3f	; 63
+  8e:	f8 94       	cli
+  90:	de bf       	out	0x3e, r29	; 62
+  92:	0f be       	out	0x3f, r0	; 63
+  94:	cd bf       	out	0x3d, r28	; 61
+	char seg_code[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90,0x88,0x83,0xc6,0xa1,0x86,0x8e};
+  96:	80 e1       	ldi	r24, 0x10	; 16
+  98:	e0 e6       	ldi	r30, 0x60	; 96
+  9a:	f0 e0       	ldi	r31, 0x00	; 0
+  9c:	de 01       	movw	r26, r28
+  9e:	11 96       	adiw	r26, 0x01	; 1
+  a0:	01 90       	ld	r0, Z+
+  a2:	0d 92       	st	X+, r0
+  a4:	8a 95       	dec	r24
+  a6:	e1 f7       	brne	.-8      	; 0xa0 <main+0x1e>
+	int cnt;
+
+	/* Configure the ports as output */
+	DDRB = 0xff;               // Data lines
+  a8:	8f ef       	ldi	r24, 0xFF	; 255
+  aa:	87 bb       	out	0x17, r24	; 23
+	DDRD = 0x01;               // Control signal PORTD0
+  ac:	81 e0       	ldi	r24, 0x01	; 1
+  ae:	81 bb       	out	0x11, r24	; 17
+  b0:	ce 01       	movw	r24, r28
+  b2:	41 96       	adiw	r24, 0x11	; 17
+	{
+		
+		for (cnt = 0x00; cnt < 0x10; cnt++)   // loop to display 0-F
+		{
+			
+			PORTD = Segment;
+  b4:	21 e0       	ldi	r18, 0x01	; 1
+  b6:	fe 01       	movw	r30, r28
+  b8:	31 96       	adiw	r30, 0x01	; 1
+  ba:	22 bb       	out	0x12, r18	; 18
+			PORTB = seg_code[cnt];
+  bc:	31 91       	ld	r19, Z+
+  be:	38 bb       	out	0x18, r19	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  c0:	3f ef       	ldi	r19, 0xFF	; 255
+  c2:	45 ea       	ldi	r20, 0xA5	; 165
+  c4:	5e e0       	ldi	r21, 0x0E	; 14
+  c6:	31 50       	subi	r19, 0x01	; 1
+  c8:	40 40       	sbci	r20, 0x00	; 0
+  ca:	50 40       	sbci	r21, 0x00	; 0
+  cc:	e1 f7       	brne	.-8      	; 0xc6 <main+0x44>
+  ce:	00 c0       	rjmp	.+0      	; 0xd0 <main+0x4e>
+  d0:	00 00       	nop
+	DDRD = 0x01;               // Control signal PORTD0
+
+	while (1)
+	{
+		
+		for (cnt = 0x00; cnt < 0x10; cnt++)   // loop to display 0-F
+  d2:	e8 17       	cp	r30, r24
+  d4:	f9 07       	cpc	r31, r25
+  d6:	89 f7       	brne	.-30     	; 0xba <main+0x38>
+  d8:	ee cf       	rjmp	.-36     	; 0xb6 <main+0x34>
+
+000000da <_exit>:
+  da:	f8 94       	cli
+
+000000dc <__stop_program>:
+  dc:	ff cf       	rjmp	.-2      	; 0xdc <__stop_program>

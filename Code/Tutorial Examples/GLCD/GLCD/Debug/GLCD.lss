@@ -1,0 +1,2238 @@
+
+GLCD.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000e90  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000002e  00800060  00000e90  00000f24  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000004  0080008e  0080008e  00000f52  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000f52  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000f84  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000100  00000000  00000000  00000fc0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000f82  00000000  00000000  000010c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000043a  00000000  00000000  00002042  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000568  00000000  00000000  0000247c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000374  00000000  00000000  000029e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000620  00000000  00000000  00002d58  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000013a0  00000000  00000000  00003378  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000158  00000000  00000000  00004718  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 ee 01 	jmp	0x3dc	; 0x3dc <__ctors_end>
+   4:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+   8:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+   c:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  10:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  14:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  18:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  1c:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  20:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  24:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  28:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  2c:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  30:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  34:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  38:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  3c:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  40:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  44:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  48:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  4c:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+  50:	0c 94 0b 02 	jmp	0x416	; 0x416 <__bad_interrupt>
+
+00000054 <ARR_GlcdFont_U8>:
+  54:	ff ff ff ff ff 00 ff ff ff ff ff ff 00 ff ff ff     ................
+  64:	ff ff ff 00 ff ff ff ff ff ff 00 ff ff ff ff ff     ................
+  74:	ff 00 ff ff ff ff ff ff 00 ff ff ff ff ff ff 00     ................
+  84:	ff ff ff ff ff ff 00 ff ff ff ff ff ff 00 ff ff     ................
+  94:	ff ff ff ff 00 ff ff ff ff ff ff 00 ff ff ff ff     ................
+  a4:	ff ff 00 ff ff ff ff ff ff 00 ff ff ff ff ff ff     ................
+  b4:	00 ff ff ff ff ff ff 00 ff ff ff ff ff ff 00 ff     ................
+  c4:	ff ff ff ff ff 00 ff ff ff ff ff ff 00 ff ff ff     ................
+  d4:	ff ff ff 00 ff ff ff ff ff ff 00 ff ff ff ff ff     ................
+  e4:	ff 00 ff ff ff ff ff ff 00 ff ff ff ff ff ff 00     ................
+  f4:	ff ff ff ff ff ff 00 ff ff ff ff ff ff 00 ff ff     ................
+ 104:	ff ff ff ff 00 ff ff ff ff ff ff 00 ff ff ff ff     ................
+ 114:	ff ff 00 ff ff ff ff ff ff 00 ff ff ff ff ff ff     ................
+ 124:	00 ff ff ff ff ff ff 00 ff ff ff ff ff ff 00 ff     ................
+ 134:	00 00 00 00 00 ff ff 00 00 4f 00 00 00 ff 00 07     .........O......
+ 144:	00 07 00 00 ff 14 7f 14 7f 14 00 ff 24 2a 7f 2a     ............$*.*
+ 154:	12 00 ff 23 13 08 64 62 00 ff 36 49 55 22 20 00     ...#..db..6IU" .
+ 164:	ff 00 05 03 00 00 00 ff 00 1c 22 41 00 00 ff 00     .........."A....
+ 174:	41 22 1c 00 00 ff 14 08 3e 08 14 00 ff 08 08 3e     A"......>......>
+ 184:	08 08 00 ff 50 30 00 00 00 00 ff 08 08 08 08 08     ....P0..........
+ 194:	00 ff 00 60 60 00 00 00 ff 20 10 08 04 02 00 ff     ...``.... ......
+ 1a4:	3e 51 49 45 3e 00 ff 40 42 7f 40 40 00 ff 42 61     >QIE>..@B.@@..Ba
+ 1b4:	51 49 46 00 ff 21 41 45 4b 31 00 ff 18 14 12 7f     QIF..!AEK1......
+ 1c4:	10 00 ff 27 45 45 45 39 00 ff 3c 4a 49 49 30 00     ...'EEE9..<JII0.
+ 1d4:	ff 01 71 09 05 03 00 ff 36 49 49 49 36 00 ff 06     ..q.....6III6...
+ 1e4:	49 49 29 1e 00 ff 00 36 36 00 00 00 ff 00 56 36     II)....66.....V6
+ 1f4:	00 00 00 ff 08 14 22 41 00 00 ff 14 14 14 14 14     ......"A........
+ 204:	00 ff 00 41 22 14 08 00 ff 02 01 51 09 06 00 ff     ...A"......Q....
+ 214:	3e 41 5d 55 1e 00 ff 7e 11 11 11 7e 00 ff 7f 49     >A]U...~...~...I
+ 224:	49 49 36 00 ff 3e 41 41 41 22 00 ff 7f 41 41 22     II6..>AAA"...AA"
+ 234:	1c 00 ff 7f 49 49 49 41 00 ff 7f 09 09 09 01 00     ....IIIA........
+ 244:	ff 3e 41 49 49 7a 00 ff 7f 08 08 08 7f 00 ff 00     .>AIIz..........
+ 254:	41 7f 41 00 00 ff 20 40 41 3f 01 00 ff 7f 08 14     A.A... @A?......
+ 264:	22 41 00 ff 7f 40 40 40 40 00 ff 7f 02 0c 02 7f     "A...@@@@.......
+ 274:	00 ff 7f 04 08 10 7f 00 ff 3e 41 41 41 3e 00 ff     .........>AAA>..
+ 284:	7f 09 09 09 06 00 ff 3e 41 51 21 5e 00 ff 7f 09     .......>AQ!^....
+ 294:	19 29 46 00 ff 26 49 49 49 32 00 ff 01 01 7f 01     .)F..&III2......
+ 2a4:	01 00 ff 3f 40 40 40 3f 00 ff 1f 20 40 20 1f 00     ...?@@@?... @ ..
+ 2b4:	ff 3f 40 38 40 3f 00 ff 63 14 08 14 63 00 ff 07     .?@8@?..c...c...
+ 2c4:	08 70 08 07 00 ff 61 51 49 45 43 00 ff 00 7f 41     .p....aQIEC....A
+ 2d4:	41 00 00 ff 02 04 08 10 20 00 ff 00 41 41 7f 00     A....... ...AA..
+ 2e4:	00 ff 04 02 01 02 04 00 ff 40 40 40 40 40 00 ff     .........@@@@@..
+ 2f4:	00 00 03 05 00 00 ff 20 54 54 54 78 00 ff 7f 44     ....... TTTx...D
+ 304:	44 44 38 00 ff 38 44 44 44 44 00 ff 38 44 44 44     DD8..8DDDD..8DDD
+ 314:	7f 00 ff 38 54 54 54 18 00 ff 04 04 7e 05 05 00     ...8TTT.....~...
+ 324:	ff 08 54 54 54 3c 00 ff 7f 08 04 04 78 00 ff 00     ..TTT<......x...
+ 334:	44 7d 40 00 ff ff 20 40 44 3d 00 ff ff 7f 10 28     D}@... @D=.....(
+ 344:	44 00 ff ff 41 7f 40 00 ff ff ff 7c 04 7c 04 78     D...A.@....|.|.x
+ 354:	00 ff 7c 08 04 04 78 00 ff 38 44 44 44 38 00 ff     ..|...x..8DDD8..
+ 364:	7c 14 14 14 08 00 ff 08 14 14 14 7c 00 ff 7c 08     |..........|..|.
+ 374:	04 04 00 ff ff 48 54 54 54 24 00 ff 04 04 3f 44     .....HTTT$....?D
+ 384:	44 00 ff 3c 40 40 20 7c 00 ff 1c 20 40 20 1c 00     D..<@@ |... @ ..
+ 394:	ff 3c 40 30 40 3c 00 ff 44 28 10 28 44 00 ff 0c     .<@0@<..D(.(D...
+ 3a4:	50 50 50 3c 00 ff 44 64 54 4c 44 00 ff 08 36 41     PPP<..DdTLD...6A
+ 3b4:	41 00 00 ff 00 00 77 00 00 00 ff 00 41 41 36 08     A.....w.....AA6.
+ 3c4:	00 ff 08 08 2a 1c 08 00 ff 08 1c 2a 08 08 00 ff     ....*......*....
+ 3d4:	ff ff ff ff ff 00 ff 00                             ........
+
+000003dc <__ctors_end>:
+ 3dc:	11 24       	eor	r1, r1
+ 3de:	1f be       	out	0x3f, r1	; 63
+ 3e0:	cf e5       	ldi	r28, 0x5F	; 95
+ 3e2:	d8 e0       	ldi	r29, 0x08	; 8
+ 3e4:	de bf       	out	0x3e, r29	; 62
+ 3e6:	cd bf       	out	0x3d, r28	; 61
+
+000003e8 <__do_copy_data>:
+ 3e8:	10 e0       	ldi	r17, 0x00	; 0
+ 3ea:	a0 e6       	ldi	r26, 0x60	; 96
+ 3ec:	b0 e0       	ldi	r27, 0x00	; 0
+ 3ee:	e0 e9       	ldi	r30, 0x90	; 144
+ 3f0:	fe e0       	ldi	r31, 0x0E	; 14
+ 3f2:	02 c0       	rjmp	.+4      	; 0x3f8 <__do_copy_data+0x10>
+ 3f4:	05 90       	lpm	r0, Z+
+ 3f6:	0d 92       	st	X+, r0
+ 3f8:	ae 38       	cpi	r26, 0x8E	; 142
+ 3fa:	b1 07       	cpc	r27, r17
+ 3fc:	d9 f7       	brne	.-10     	; 0x3f4 <__do_copy_data+0xc>
+
+000003fe <__do_clear_bss>:
+ 3fe:	20 e0       	ldi	r18, 0x00	; 0
+ 400:	ae e8       	ldi	r26, 0x8E	; 142
+ 402:	b0 e0       	ldi	r27, 0x00	; 0
+ 404:	01 c0       	rjmp	.+2      	; 0x408 <.do_clear_bss_start>
+
+00000406 <.do_clear_bss_loop>:
+ 406:	1d 92       	st	X+, r1
+
+00000408 <.do_clear_bss_start>:
+ 408:	a2 39       	cpi	r26, 0x92	; 146
+ 40a:	b2 07       	cpc	r27, r18
+ 40c:	e1 f7       	brne	.-8      	; 0x406 <.do_clear_bss_loop>
+ 40e:	0e 94 70 05 	call	0xae0	; 0xae0 <main>
+ 412:	0c 94 46 07 	jmp	0xe8c	; 0xe8c <_exit>
+
+00000416 <__bad_interrupt>:
+ 416:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000041a <glcd_SelectPage0>:
+}
+
+
+static void glcd_SelectPage0() 
+ { 
+   M_GlcdSetBit(GLCD_CS1); 
+ 41a:	ab 9a       	sbi	0x15, 3	; 21
+   M_GlcdClearBit(GLCD_CS2); 
+ 41c:	ac 98       	cbi	0x15, 4	; 21
+ 41e:	08 95       	ret
+
+00000420 <glcd_SelectPage1>:
+ }
+
+static void glcd_SelectPage1() 
+ {
+   M_GlcdSetBit(GLCD_CS2);  
+ 420:	ac 9a       	sbi	0x15, 4	; 21
+   M_GlcdClearBit(GLCD_CS1); 
+ 422:	ab 98       	cbi	0x15, 3	; 21
+ 424:	08 95       	ret
+
+00000426 <glcd_BusyCheck>:
+{
+    uint8_t busyflag;
+    
+#ifdef GLCD_RW                    //Perform Busy check if GLCD_RW pin is used
+
+    util_UpdateBit(M_GlcdDataBusDirection,GLCD_D7,C_PinInput_U8); // Configure busy pin as input
+ 426:	d7 98       	cbi	0x1a, 7	; 26
+    M_GlcdClearBit(GLCD_RS);           // Select the Command Register by pulling RS LOW
+ 428:	a8 98       	cbi	0x15, 0	; 21
+    M_GlcdSetBit(GLCD_RW);             // Select the Read Operation for busy flag by setting RW
+ 42a:	a9 9a       	sbi	0x15, 1	; 21
+    do
+    {
+        M_GlcdClearBit(GLCD_EN);             // Send a High-to-Low Pulse at Enable Pin
+ 42c:	aa 98       	cbi	0x15, 2	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 42e:	8a e0       	ldi	r24, 0x0A	; 10
+ 430:	8a 95       	dec	r24
+ 432:	f1 f7       	brne	.-4      	; 0x430 <glcd_BusyCheck+0xa>
+ 434:	00 c0       	rjmp	.+0      	; 0x436 <glcd_BusyCheck+0x10>
+        DELAY_us(2);    
+        M_GlcdSetBit(GLCD_EN);
+ 436:	aa 9a       	sbi	0x15, 2	; 21
+ 438:	8a e0       	ldi	r24, 0x0A	; 10
+ 43a:	8a 95       	dec	r24
+ 43c:	f1 f7       	brne	.-4      	; 0x43a <glcd_BusyCheck+0x14>
+ 43e:	00 c0       	rjmp	.+0      	; 0x440 <glcd_BusyCheck+0x1a>
+        DELAY_us(2);
+        busyflag = util_GetBitStatus(M_GlcdDataBusInput,GLCD_D7);
+    }while(busyflag);
+ 440:	cf 99       	sbic	0x19, 7	; 25
+ 442:	f4 cf       	rjmp	.-24     	; 0x42c <glcd_BusyCheck+0x6>
+
+    util_UpdateBit(M_GlcdDataBusDirection,GLCD_D7,C_PinOutput_U8);
+ 444:	d7 9a       	sbi	0x1a, 7	; 26
+ 446:	08 95       	ret
+
+00000448 <glcd_CmdWrite>:
+                Some of the commonly used commands are defined in lcd.h.
+                For more commands refer the data sheet and send the supported command.                
+                The behavior is undefined if unsupported commands are sent.    
+ ***************************************************************************************************/
+static void glcd_CmdWrite( uint8_t var_cmd_u8)
+{
+ 448:	cf 93       	push	r28
+ 44a:	df 93       	push	r29
+ 44c:	1f 92       	push	r1
+ 44e:	cd b7       	in	r28, 0x3d	; 61
+ 450:	de b7       	in	r29, 0x3e	; 62
+    glcd_BusyCheck();
+ 452:	89 83       	std	Y+1, r24	; 0x01
+ 454:	0e 94 13 02 	call	0x426	; 0x426 <glcd_BusyCheck>
+    M_GlcdDataBus = var_cmd_u8;
+ 458:	89 81       	ldd	r24, Y+1	; 0x01
+ 45a:	8b bb       	out	0x1b, r24	; 27
+    M_GlcdClearBit(GLCD_RS);           // Select the Command Register by pulling RS LOW
+ 45c:	a8 98       	cbi	0x15, 0	; 21
+#ifdef GLCD_RW
+    M_GlcdClearBit(GLCD_RW);           // Select the Write Operation  by pulling RW LOW
+ 45e:	a9 98       	cbi	0x15, 1	; 21
+#endif
+    M_GlcdSetBit(GLCD_EN);             // Send a High-to-Low Pulse at Enable Pin
+ 460:	aa 9a       	sbi	0x15, 2	; 21
+ 462:	8a e0       	ldi	r24, 0x0A	; 10
+ 464:	8a 95       	dec	r24
+ 466:	f1 f7       	brne	.-4      	; 0x464 <glcd_CmdWrite+0x1c>
+ 468:	00 c0       	rjmp	.+0      	; 0x46a <glcd_CmdWrite+0x22>
+    DELAY_us(2);
+    M_GlcdClearBit(GLCD_EN);
+ 46a:	aa 98       	cbi	0x15, 2	; 21
+}
+ 46c:	0f 90       	pop	r0
+ 46e:	df 91       	pop	r29
+ 470:	cf 91       	pop	r28
+ 472:	08 95       	ret
+
+00000474 <glcd_DataWrite>:
+ * Return value    : none
+
+ * description : This functions is used to send a byte of data to LCD.                 .    
+ *************************************************************************************************/
+static void glcd_DataWrite( uint8_t var_data_u8)
+{
+ 474:	cf 93       	push	r28
+ 476:	df 93       	push	r29
+ 478:	1f 92       	push	r1
+ 47a:	cd b7       	in	r28, 0x3d	; 61
+ 47c:	de b7       	in	r29, 0x3e	; 62
+    glcd_BusyCheck();
+ 47e:	89 83       	std	Y+1, r24	; 0x01
+ 480:	0e 94 13 02 	call	0x426	; 0x426 <glcd_BusyCheck>
+    M_GlcdDataBus = var_data_u8 ^ GLCD.Invertdisplay;
+ 484:	90 91 91 00 	lds	r25, 0x0091
+ 488:	89 81       	ldd	r24, Y+1	; 0x01
+ 48a:	89 27       	eor	r24, r25
+ 48c:	8b bb       	out	0x1b, r24	; 27
+    M_GlcdSetBit(GLCD_RS);           // Select the Data Register by pulling RS High
+ 48e:	a8 9a       	sbi	0x15, 0	; 21
+#ifdef GLCD_RW
+    M_GlcdClearBit(GLCD_RW);           // Select the Write Operation  by pulling RW LOW
+ 490:	a9 98       	cbi	0x15, 1	; 21
+#endif
+    M_GlcdSetBit(GLCD_EN);             // Send a High-to-Low Pulse at Enable Pin
+ 492:	aa 9a       	sbi	0x15, 2	; 21
+ 494:	8a e0       	ldi	r24, 0x0A	; 10
+ 496:	8a 95       	dec	r24
+ 498:	f1 f7       	brne	.-4      	; 0x496 <glcd_DataWrite+0x22>
+ 49a:	00 c0       	rjmp	.+0      	; 0x49c <glcd_DataWrite+0x28>
+    DELAY_us(2);
+    M_GlcdClearBit(GLCD_EN);
+ 49c:	aa 98       	cbi	0x15, 2	; 21
+}
+ 49e:	0f 90       	pop	r0
+ 4a0:	df 91       	pop	r29
+ 4a2:	cf 91       	pop	r28
+ 4a4:	08 95       	ret
+
+000004a6 <GLCD_GoToPage.part.1>:
+        If the requested line number is out of range, it will not move the cursor.
+
+     Note: The line numbers run from 1 to Maxlines,
+ ***************************************************************************************************/
+ /* TODO: change the desp and variable name */
+void GLCD_GoToPage(uint8_t pageNumber)
+ 4a6:	cf 93       	push	r28
+ 4a8:	c8 2f       	mov	r28, r24
+{
+
+    if((pageNumber==0) || (pageNumber ==1))
+    { /* for 128/64 GLCD only page 0&1 are supported.
+        Select the specified page and move the cursor accordingly */
+        if(pageNumber == 0)
+ 4aa:	81 11       	cpse	r24, r1
+ 4ac:	03 c0       	rjmp	.+6      	; 0x4b4 <GLCD_GoToPage.part.1+0xe>
+        {
+
+            glcd_SelectPage0();
+ 4ae:	0e 94 0d 02 	call	0x41a	; 0x41a <glcd_SelectPage0>
+ 4b2:	02 c0       	rjmp	.+4      	; 0x4b8 <GLCD_GoToPage.part.1+0x12>
+        }
+        else
+        {
+            glcd_SelectPage1();
+ 4b4:	0e 94 10 02 	call	0x420	; 0x420 <glcd_SelectPage1>
+        }
+        GLCD.PageNum=pageNumber;
+ 4b8:	c0 93 8e 00 	sts	0x008E, r28
+        GLCD.CursorPos=0x40;
+ 4bc:	80 e4       	ldi	r24, 0x40	; 64
+ 4be:	80 93 90 00 	sts	0x0090, r24
+        glcd_CmdWrite(GLCD.LineNum);
+ 4c2:	80 91 8f 00 	lds	r24, 0x008F
+ 4c6:	0e 94 24 02 	call	0x448	; 0x448 <glcd_CmdWrite>
+        glcd_CmdWrite(GLCD.CursorPos);
+ 4ca:	80 91 90 00 	lds	r24, 0x0090
+    }
+}
+ 4ce:	cf 91       	pop	r28
+            glcd_SelectPage1();
+        }
+        GLCD.PageNum=pageNumber;
+        GLCD.CursorPos=0x40;
+        glcd_CmdWrite(GLCD.LineNum);
+        glcd_CmdWrite(GLCD.CursorPos);
+ 4d0:	0c 94 24 02 	jmp	0x448	; 0x448 <glcd_CmdWrite>
+
+000004d4 <GLCD_GoToLine>:
+     Note: The line numbers run from 0 to Maxlines-1, For 128x64 the line numbers will be 0-7
+***************************************************************************************************/
+/* Todo: All constants for the magic numbers */
+void  GLCD_GoToLine(uint8_t var_lineNumber_u8)
+{
+    if(var_lineNumber_u8 <= C_GlcdLastLine_U8)
+ 4d4:	88 30       	cpi	r24, 0x08	; 8
+ 4d6:	30 f4       	brcc	.+12     	; 0x4e4 <GLCD_GoToLine+0x10>
+    {   /* If the line number is within range
+         then move it to specified line on page0 and keep track*/
+        GLCD.LineNum = var_lineNumber_u8+C_FirstLineNumberAddress_U8;
+ 4d8:	88 54       	subi	r24, 0x48	; 72
+ 4da:	80 93 8f 00 	sts	0x008F, r24
+ 4de:	80 e0       	ldi	r24, 0x00	; 0
+ 4e0:	0c 94 53 02 	jmp	0x4a6	; 0x4a6 <GLCD_GoToPage.part.1>
+ 4e4:	08 95       	ret
+
+000004e6 <GLCD_Clear>:
+ * Return value    : none
+
+ * description  :This function clears the LCD and moves the cursor to beginning of first line on page0
+ ***************************************************************************************************/
+void GLCD_Clear()
+{
+ 4e6:	1f 93       	push	r17
+ 4e8:	cf 93       	push	r28
+ 4ea:	df 93       	push	r29
+    uint8_t line,cursor,inversion;
+
+    inversion = GLCD.Invertdisplay;
+ 4ec:	10 91 91 00 	lds	r17, 0x0091
+	GLCD.Invertdisplay = 0x00;
+ 4f0:	10 92 91 00 	sts	0x0091, r1
+	
+    for(line=0;line<8;line++)  /* loop through all the 8lines to clear the display */
+ 4f4:	c0 e0       	ldi	r28, 0x00	; 0
+    {
+         GLCD_GoToLine(line);  /* Go to beginning of the specified line on page0 */
+ 4f6:	8c 2f       	mov	r24, r28
+ 4f8:	0e 94 6a 02 	call	0x4d4	; 0x4d4 <GLCD_GoToLine>
+        
+        for(cursor=0;cursor<128;cursor++) /* Clear all the 128 pixels of selected line */
+ 4fc:	d0 e0       	ldi	r29, 0x00	; 0
+            if(cursor==64)  /* Has the cursor reached end of page0 */
+            {
+                GLCD_GoToPage(1); /*  then set it to beginning of page1 */
+                
+            }
+            glcd_DataWrite(0x00); /* Clear each pixel by displaying blank */
+ 4fe:	80 e0       	ldi	r24, 0x00	; 0
+ 500:	0e 94 3a 02 	call	0x474	; 0x474 <glcd_DataWrite>
+	
+    for(line=0;line<8;line++)  /* loop through all the 8lines to clear the display */
+    {
+         GLCD_GoToLine(line);  /* Go to beginning of the specified line on page0 */
+        
+        for(cursor=0;cursor<128;cursor++) /* Clear all the 128 pixels of selected line */
+ 504:	df 5f       	subi	r29, 0xFF	; 255
+ 506:	d0 38       	cpi	r29, 0x80	; 128
+ 508:	31 f0       	breq	.+12     	; 0x516 <GLCD_Clear+0x30>
+        {
+            if(cursor==64)  /* Has the cursor reached end of page0 */
+ 50a:	d0 34       	cpi	r29, 0x40	; 64
+ 50c:	c1 f7       	brne	.-16     	; 0x4fe <GLCD_Clear+0x18>
+ 50e:	81 e0       	ldi	r24, 0x01	; 1
+ 510:	0e 94 53 02 	call	0x4a6	; 0x4a6 <GLCD_GoToPage.part.1>
+ 514:	f4 cf       	rjmp	.-24     	; 0x4fe <GLCD_Clear+0x18>
+    uint8_t line,cursor,inversion;
+
+    inversion = GLCD.Invertdisplay;
+	GLCD.Invertdisplay = 0x00;
+	
+    for(line=0;line<8;line++)  /* loop through all the 8lines to clear the display */
+ 516:	cf 5f       	subi	r28, 0xFF	; 255
+ 518:	c8 30       	cpi	r28, 0x08	; 8
+ 51a:	69 f7       	brne	.-38     	; 0x4f6 <GLCD_Clear+0x10>
+            }
+            glcd_DataWrite(0x00); /* Clear each pixel by displaying blank */
+        }
+    }
+	
+	GLCD.Invertdisplay = inversion;
+ 51c:	10 93 91 00 	sts	0x0091, r17
+void  GLCD_GoToLine(uint8_t var_lineNumber_u8)
+{
+    if(var_lineNumber_u8 <= C_GlcdLastLine_U8)
+    {   /* If the line number is within range
+         then move it to specified line on page0 and keep track*/
+        GLCD.LineNum = var_lineNumber_u8+C_FirstLineNumberAddress_U8;
+ 520:	88 eb       	ldi	r24, 0xB8	; 184
+ 522:	80 93 8f 00 	sts	0x008F, r24
+ 526:	80 e0       	ldi	r24, 0x00	; 0
+    }
+	
+	GLCD.Invertdisplay = inversion;
+
+    GLCD_GoToLine(0);
+}
+ 528:	df 91       	pop	r29
+ 52a:	cf 91       	pop	r28
+ 52c:	1f 91       	pop	r17
+ 52e:	0c 94 53 02 	jmp	0x4a6	; 0x4a6 <GLCD_GoToPage.part.1>
+
+00000532 <GLCD_Init>:
+ * description  :This function is used to initialize the GLCD.
+                 
+**************************************************************************************************/
+void GLCD_Init()
+{
+	M_GlcdControlBusDirection = C_PortOutput_U8; /* Configure the data bus and Control bus as Output */
+ 532:	8f ef       	ldi	r24, 0xFF	; 255
+ 534:	84 bb       	out	0x14, r24	; 20
+    M_GlcdDataBusDirection = C_PortOutput_U8;
+ 536:	8a bb       	out	0x1a, r24	; 26
+
+
+    /* Select the Page0/Page1 and Enable the GLCD */
+    glcd_SelectPage0();
+ 538:	0e 94 0d 02 	call	0x41a	; 0x41a <glcd_SelectPage0>
+    glcd_CmdWrite(0x3f);
+ 53c:	8f e3       	ldi	r24, 0x3F	; 63
+ 53e:	0e 94 24 02 	call	0x448	; 0x448 <glcd_CmdWrite>
+    glcd_SelectPage1();
+ 542:	0e 94 10 02 	call	0x420	; 0x420 <glcd_SelectPage1>
+    glcd_CmdWrite(0x3f);
+ 546:	8f e3       	ldi	r24, 0x3F	; 63
+ 548:	0e 94 24 02 	call	0x448	; 0x448 <glcd_CmdWrite>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 54c:	8f e3       	ldi	r24, 0x3F	; 63
+ 54e:	9c e9       	ldi	r25, 0x9C	; 156
+ 550:	01 97       	sbiw	r24, 0x01	; 1
+ 552:	f1 f7       	brne	.-4      	; 0x550 <GLCD_Init+0x1e>
+ 554:	00 c0       	rjmp	.+0      	; 0x556 <GLCD_Init+0x24>
+ 556:	00 00       	nop
+    DELAY_ms(10);
+
+    /* Select the Page0/Page1 and Enable the GLCD */
+    glcd_SelectPage0();
+ 558:	0e 94 0d 02 	call	0x41a	; 0x41a <glcd_SelectPage0>
+    glcd_CmdWrite(0xc0);
+ 55c:	80 ec       	ldi	r24, 0xC0	; 192
+ 55e:	0e 94 24 02 	call	0x448	; 0x448 <glcd_CmdWrite>
+    glcd_SelectPage1();
+ 562:	0e 94 10 02 	call	0x420	; 0x420 <glcd_SelectPage1>
+    glcd_CmdWrite(0xc0);
+ 566:	80 ec       	ldi	r24, 0xC0	; 192
+ 568:	0e 94 24 02 	call	0x448	; 0x448 <glcd_CmdWrite>
+
+   /* Clear the complete LCD and move the cursor to beginning of page0*/
+    GLCD_Clear();
+ 56c:	0c 94 73 02 	jmp	0x4e6	; 0x4e6 <GLCD_Clear>
+
+00000570 <GLCD_GoToNextLine>:
+ ***************************************************************************************************/
+void  GLCD_GoToNextLine()
+{
+    /*Increment the current line number.
+      In case it exceeds the limit, rool it back to first line */
+    GLCD.LineNum++;
+ 570:	80 91 8f 00 	lds	r24, 0x008F
+ 574:	8f 5f       	subi	r24, 0xFF	; 255
+    if(GLCD.LineNum > C_LastLineNumberAddress_U8)
+ 576:	80 3c       	cpi	r24, 0xC0	; 192
+ 578:	08 f0       	brcs	.+2      	; 0x57c <GLCD_GoToNextLine+0xc>
+      GLCD.LineNum = C_FirstLineNumberAddress_U8;
+ 57a:	88 eb       	ldi	r24, 0xB8	; 184
+ 57c:	80 93 8f 00 	sts	0x008F, r24
+ 580:	80 e0       	ldi	r24, 0x00	; 0
+ 582:	0c 94 53 02 	jmp	0x4a6	; 0x4a6 <GLCD_GoToPage.part.1>
+
+00000586 <GLCD_DisplayChar>:
+                  Any valid ascii value can be passed to display respective character
+
+ ***************************************************************************************************/
+ /* Add the comments for decoding the character, Even offset handling*/
+void GLCD_DisplayChar(uint8_t var_lcdData_u8)
+{
+ 586:	cf 93       	push	r28
+ 588:	df 93       	push	r29
+ 58a:	c8 2f       	mov	r28, r24
+    uint8_t dat,*ptr;
+
+
+    if(((GLCD.PageNum == 0x01) && (GLCD.CursorPos>=0x7c)) || (var_lcdData_u8=='\n'))
+ 58c:	80 91 8e 00 	lds	r24, 0x008E
+ 590:	81 30       	cpi	r24, 0x01	; 1
+ 592:	21 f4       	brne	.+8      	; 0x59c <GLCD_DisplayChar+0x16>
+ 594:	80 91 90 00 	lds	r24, 0x0090
+ 598:	8c 37       	cpi	r24, 0x7C	; 124
+ 59a:	48 f4       	brcc	.+18     	; 0x5ae <GLCD_DisplayChar+0x28>
+ 59c:	ca 30       	cpi	r28, 0x0A	; 10
+ 59e:	39 f0       	breq	.+14     	; 0x5ae <GLCD_DisplayChar+0x28>
+        OR NewLine command is issued Then Move the cursor to next line */
+        GLCD_GoToNextLine();
+    }
+       if(var_lcdData_u8!='\n') /* TODO */
+    {
+        ptr= &ARR_GlcdFont_U8[var_lcdData_u8][0]; /* Get the address of the Character pattern from LookUp */
+ 5a0:	87 e0       	ldi	r24, 0x07	; 7
+ 5a2:	c8 9f       	mul	r28, r24
+ 5a4:	e0 01       	movw	r28, r0
+ 5a6:	11 24       	eor	r1, r1
+ 5a8:	cc 5a       	subi	r28, 0xAC	; 172
+ 5aa:	df 4f       	sbci	r29, 0xFF	; 255
+ 5ac:	18 c0       	rjmp	.+48     	; 0x5de <GLCD_DisplayChar+0x58>
+
+    if(((GLCD.PageNum == 0x01) && (GLCD.CursorPos>=0x7c)) || (var_lcdData_u8=='\n'))
+    {
+        /* If the cursor has reached to end of line on page1
+        OR NewLine command is issued Then Move the cursor to next line */
+        GLCD_GoToNextLine();
+ 5ae:	0e 94 b8 02 	call	0x570	; 0x570 <GLCD_GoToNextLine>
+    }
+       if(var_lcdData_u8!='\n') /* TODO */
+ 5b2:	ca 30       	cpi	r28, 0x0A	; 10
+ 5b4:	c9 f0       	breq	.+50     	; 0x5e8 <GLCD_DisplayChar+0x62>
+ 5b6:	f4 cf       	rjmp	.-24     	; 0x5a0 <GLCD_DisplayChar+0x1a>
+    {
+        ptr= &ARR_GlcdFont_U8[var_lcdData_u8][0]; /* Get the address of the Character pattern from LookUp */
+        while(1)
+        {
+            if((GLCD.PageNum == 0x00) && (GLCD.CursorPos==0x80))
+ 5b8:	80 91 90 00 	lds	r24, 0x0090
+ 5bc:	80 38       	cpi	r24, 0x80	; 128
+ 5be:	19 f4       	brne	.+6      	; 0x5c6 <GLCD_DisplayChar+0x40>
+ 5c0:	81 e0       	ldi	r24, 0x01	; 1
+ 5c2:	0e 94 53 02 	call	0x4a6	; 0x4a6 <GLCD_GoToPage.part.1>
+                /* If the cursor has reached to end of line on page0
+                     Then Move the cursor to Page1 */
+                GLCD_GoToPage(1);
+            }
+
+            dat= pgm_read_byte(ptr++);/* Get the data to be displayed for LookUptable*/
+ 5c6:	fe 01       	movw	r30, r28
+ 5c8:	84 91       	lpm	r24, Z
+ 5ca:	21 96       	adiw	r28, 0x01	; 1
+
+            if(dat==0xff) /* Exit the loop if End of char is encountered */
+ 5cc:	8f 3f       	cpi	r24, 0xFF	; 255
+ 5ce:	61 f0       	breq	.+24     	; 0x5e8 <GLCD_DisplayChar+0x62>
+                break;
+
+            glcd_DataWrite(dat); /* Display the data and keep track of cursor */
+ 5d0:	0e 94 3a 02 	call	0x474	; 0x474 <glcd_DataWrite>
+            GLCD.CursorPos++;
+ 5d4:	80 91 90 00 	lds	r24, 0x0090
+ 5d8:	8f 5f       	subi	r24, 0xFF	; 255
+ 5da:	80 93 90 00 	sts	0x0090, r24
+       if(var_lcdData_u8!='\n') /* TODO */
+    {
+        ptr= &ARR_GlcdFont_U8[var_lcdData_u8][0]; /* Get the address of the Character pattern from LookUp */
+        while(1)
+        {
+            if((GLCD.PageNum == 0x00) && (GLCD.CursorPos==0x80))
+ 5de:	80 91 8e 00 	lds	r24, 0x008E
+ 5e2:	81 11       	cpse	r24, r1
+ 5e4:	f0 cf       	rjmp	.-32     	; 0x5c6 <GLCD_DisplayChar+0x40>
+ 5e6:	e8 cf       	rjmp	.-48     	; 0x5b8 <GLCD_DisplayChar+0x32>
+
+            glcd_DataWrite(dat); /* Display the data and keep track of cursor */
+            GLCD.CursorPos++;
+        }
+    }
+}
+ 5e8:	df 91       	pop	r29
+ 5ea:	cf 91       	pop	r28
+ 5ec:	08 95       	ret
+
+000005ee <GLCD_DisplayString>:
+                    and traverses till the end(NULL CHAR)and displays a char each time.
+
+ ***************************************************************************************************/
+#if (Enable_GLCD_DisplayString==1)
+void GLCD_DisplayString(char *ptr_stringPointer_u8)
+{
+ 5ee:	cf 93       	push	r28
+ 5f0:	df 93       	push	r29
+ 5f2:	ec 01       	movw	r28, r24
+    while((*ptr_stringPointer_u8)!=0)
+ 5f4:	89 91       	ld	r24, Y+
+ 5f6:	88 23       	and	r24, r24
+ 5f8:	19 f0       	breq	.+6      	; 0x600 <GLCD_DisplayString+0x12>
+        GLCD_DisplayChar(*ptr_stringPointer_u8++); // Loop through the string and display char by char
+ 5fa:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+ 5fe:	fa cf       	rjmp	.-12     	; 0x5f4 <GLCD_DisplayString+0x6>
+}
+ 600:	df 91       	pop	r29
+ 602:	cf 91       	pop	r28
+ 604:	08 95       	ret
+
+00000606 <GLCD_DisplayDecimalNumber>:
+                2.(12345,6) then 6-digits ie. 012345 will be displayed
+                3.(12345,C_DisplayDefaultDigits_U8) then 12345 will be displayed.
+ ***************************************************************************************************/
+#if ((Enable_GLCD_DisplayDecimalNumber == 1) || (Enable_GLCD_DisplayFloatNumber == 1))
+void GLCD_DisplayDecimalNumber(uint32_t var_DecNumber_u32, uint8_t var_numOfDigitsToDisplay_u8)
+{
+ 606:	8f 92       	push	r8
+ 608:	9f 92       	push	r9
+ 60a:	af 92       	push	r10
+ 60c:	bf 92       	push	r11
+ 60e:	cf 92       	push	r12
+ 610:	df 92       	push	r13
+ 612:	ef 92       	push	r14
+ 614:	ff 92       	push	r15
+ 616:	0f 93       	push	r16
+ 618:	1f 93       	push	r17
+ 61a:	cf 93       	push	r28
+ 61c:	df 93       	push	r29
+ 61e:	cd b7       	in	r28, 0x3d	; 61
+ 620:	de b7       	in	r29, 0x3e	; 62
+ 622:	2a 97       	sbiw	r28, 0x0a	; 10
+ 624:	0f b6       	in	r0, 0x3f	; 63
+ 626:	f8 94       	cli
+ 628:	de bf       	out	0x3e, r29	; 62
+ 62a:	0f be       	out	0x3f, r0	; 63
+ 62c:	cd bf       	out	0x3d, r28	; 61
+ 62e:	04 2f       	mov	r16, r20
+ 630:	9e 01       	movw	r18, r28
+ 632:	2f 5f       	subi	r18, 0xFF	; 255
+ 634:	3f 4f       	sbci	r19, 0xFF	; 255
+ 636:	79 01       	movw	r14, r18
+    uint8_t i=0,a[10];
+
+    if(var_DecNumber_u32==0)
+ 638:	61 15       	cp	r22, r1
+ 63a:	71 05       	cpc	r23, r1
+ 63c:	81 05       	cpc	r24, r1
+ 63e:	91 05       	cpc	r25, r1
+ 640:	39 f0       	breq	.+14     	; 0x650 <GLCD_DisplayDecimalNumber+0x4a>
+ 642:	69 01       	movw	r12, r18
+            {
+                /* Extract the digits from the number till it becomes zero.
+                First get the remainder and divide the number by 10 each time.
+                If var_num_u32 = 123 then extracted remainder will be 3 and number will be 12.
+                The process continues till it becomes zero or max digits reached*/
+                a[i]=util_GetMod32(var_DecNumber_u32,10);
+ 644:	2a e0       	ldi	r18, 0x0A	; 10
+ 646:	82 2e       	mov	r8, r18
+ 648:	91 2c       	mov	r9, r1
+ 64a:	a1 2c       	mov	r10, r1
+ 64c:	b1 2c       	mov	r11, r1
+ 64e:	19 c0       	rjmp	.+50     	; 0x682 <GLCD_DisplayDecimalNumber+0x7c>
+ 650:	f9 01       	movw	r30, r18
+#if ((Enable_GLCD_DisplayDecimalNumber == 1) || (Enable_GLCD_DisplayFloatNumber == 1))
+void GLCD_DisplayDecimalNumber(uint32_t var_DecNumber_u32, uint8_t var_numOfDigitsToDisplay_u8)
+{
+    uint8_t i=0,a[10];
+
+    if(var_DecNumber_u32==0)
+ 652:	10 e0       	ldi	r17, 0x00	; 0
+    {
+        /* If the number is zero then update the array with the same for displaying */
+        for(i=0;((i<var_numOfDigitsToDisplay_u8) && (i<C_GlcdMaxDigitsToDisplay_U8));i++)
+ 654:	10 17       	cp	r17, r16
+ 656:	f9 f0       	breq	.+62     	; 0x696 <GLCD_DisplayDecimalNumber+0x90>
+ 658:	1a 30       	cpi	r17, 0x0A	; 10
+ 65a:	e9 f0       	breq	.+58     	; 0x696 <GLCD_DisplayDecimalNumber+0x90>
+            a[i] = 0x00;
+ 65c:	11 92       	st	Z+, r1
+    uint8_t i=0,a[10];
+
+    if(var_DecNumber_u32==0)
+    {
+        /* If the number is zero then update the array with the same for displaying */
+        for(i=0;((i<var_numOfDigitsToDisplay_u8) && (i<C_GlcdMaxDigitsToDisplay_U8));i++)
+ 65e:	1f 5f       	subi	r17, 0xFF	; 255
+ 660:	f9 cf       	rjmp	.-14     	; 0x654 <GLCD_DisplayDecimalNumber+0x4e>
+    {
+        for(i=0;i<var_numOfDigitsToDisplay_u8;i++)
+        {
+            /* Continue extracting the digits from right side
+               till the Specified var_numOfDigitsToDisplay_u8 */
+            if(var_DecNumber_u32!=0)
+ 662:	61 15       	cp	r22, r1
+ 664:	71 05       	cpc	r23, r1
+ 666:	81 05       	cpc	r24, r1
+ 668:	91 05       	cpc	r25, r1
+ 66a:	81 f0       	breq	.+32     	; 0x68c <GLCD_DisplayDecimalNumber+0x86>
+            {
+                /* Extract the digits from the number till it becomes zero.
+                First get the remainder and divide the number by 10 each time.
+                If var_num_u32 = 123 then extracted remainder will be 3 and number will be 12.
+                The process continues till it becomes zero or max digits reached*/
+                a[i]=util_GetMod32(var_DecNumber_u32,10);
+ 66c:	a5 01       	movw	r20, r10
+ 66e:	94 01       	movw	r18, r8
+ 670:	0e 94 24 07 	call	0xe48	; 0xe48 <__udivmodsi4>
+ 674:	f6 01       	movw	r30, r12
+ 676:	60 83       	st	Z, r22
+                var_DecNumber_u32=var_DecNumber_u32/10;
+ 678:	b9 01       	movw	r22, r18
+ 67a:	ca 01       	movw	r24, r20
+ 67c:	ff ef       	ldi	r31, 0xFF	; 255
+ 67e:	cf 1a       	sub	r12, r31
+ 680:	df 0a       	sbc	r13, r31
+ 682:	1c 2d       	mov	r17, r12
+ 684:	1e 19       	sub	r17, r14
+        for(i=0;((i<var_numOfDigitsToDisplay_u8) && (i<C_GlcdMaxDigitsToDisplay_U8));i++)
+            a[i] = 0x00;
+    }
+    else
+    {
+        for(i=0;i<var_numOfDigitsToDisplay_u8;i++)
+ 686:	10 17       	cp	r17, r16
+ 688:	60 f3       	brcs	.-40     	; 0x662 <GLCD_DisplayDecimalNumber+0x5c>
+ 68a:	05 c0       	rjmp	.+10     	; 0x696 <GLCD_DisplayDecimalNumber+0x90>
+                If var_num_u32 = 123 then extracted remainder will be 3 and number will be 12.
+                The process continues till it becomes zero or max digits reached*/
+                a[i]=util_GetMod32(var_DecNumber_u32,10);
+                var_DecNumber_u32=var_DecNumber_u32/10;
+            }
+            else if( (var_numOfDigitsToDisplay_u8 == C_GlcdDisplayDefaultDigits_U8) ||
+ 68c:	0b 30       	cpi	r16, 0x0B	; 11
+ 68e:	18 f4       	brcc	.+6      	; 0x696 <GLCD_DisplayDecimalNumber+0x90>
+            else
+            {
+                /* In case user expects more digits to be displayed than the actual digits in number,
+                  then update the remaining digits with zero.
+               Ex: var_num_u32 is 123 and user wants five digits then 00123 has to be displayed */
+                a[i]=0;
+ 690:	f6 01       	movw	r30, r12
+ 692:	10 82       	st	Z, r1
+ 694:	f3 cf       	rjmp	.-26     	; 0x67c <GLCD_DisplayDecimalNumber+0x76>
+            }
+        }
+    }
+
+
+    while(i)
+ 696:	11 23       	and	r17, r17
+ 698:	49 f0       	breq	.+18     	; 0x6ac <GLCD_DisplayDecimalNumber+0xa6>
+    { 
+        /* Finally get the ascii values of the digits and display*/
+        GLCD_DisplayChar(util_Dec2Ascii(a[i-1]));
+ 69a:	fe 01       	movw	r30, r28
+ 69c:	e1 0f       	add	r30, r17
+ 69e:	f1 1d       	adc	r31, r1
+ 6a0:	80 81       	ld	r24, Z
+ 6a2:	80 5d       	subi	r24, 0xD0	; 208
+ 6a4:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+        i--;
+ 6a8:	11 50       	subi	r17, 0x01	; 1
+ 6aa:	f5 cf       	rjmp	.-22     	; 0x696 <GLCD_DisplayDecimalNumber+0x90>
+    }
+}
+ 6ac:	2a 96       	adiw	r28, 0x0a	; 10
+ 6ae:	0f b6       	in	r0, 0x3f	; 63
+ 6b0:	f8 94       	cli
+ 6b2:	de bf       	out	0x3e, r29	; 62
+ 6b4:	0f be       	out	0x3f, r0	; 63
+ 6b6:	cd bf       	out	0x3d, r28	; 61
+ 6b8:	df 91       	pop	r29
+ 6ba:	cf 91       	pop	r28
+ 6bc:	1f 91       	pop	r17
+ 6be:	0f 91       	pop	r16
+ 6c0:	ff 90       	pop	r15
+ 6c2:	ef 90       	pop	r14
+ 6c4:	df 90       	pop	r13
+ 6c6:	cf 90       	pop	r12
+ 6c8:	bf 90       	pop	r11
+ 6ca:	af 90       	pop	r10
+ 6cc:	9f 90       	pop	r9
+ 6ce:	8f 90       	pop	r8
+ 6d0:	08 95       	ret
+
+000006d2 <GLCD_DisplayHexNumber>:
+                2.(0x12AB,6) then 6-digits ie. 0012AB will be displayed
+                3.(0x12AB,C_DisplayDefaultDigits_U8) then 12AB will be displayed.
+ ***************************************************************************************************/
+#if ( Enable_GLCD_DisplayHexNumber == 1 ) 
+void GLCD_DisplayHexNumber(uint32_t var_hexNumber_u32,uint8_t var_numOfDigitsToDisplay_u8)
+{
+ 6d2:	1f 93       	push	r17
+ 6d4:	cf 93       	push	r28
+ 6d6:	df 93       	push	r29
+ 6d8:	cd b7       	in	r28, 0x3d	; 61
+ 6da:	de b7       	in	r29, 0x3e	; 62
+ 6dc:	2a 97       	sbiw	r28, 0x0a	; 10
+ 6de:	0f b6       	in	r0, 0x3f	; 63
+ 6e0:	f8 94       	cli
+ 6e2:	de bf       	out	0x3e, r29	; 62
+ 6e4:	0f be       	out	0x3f, r0	; 63
+ 6e6:	cd bf       	out	0x3d, r28	; 61
+ 6e8:	de 01       	movw	r26, r28
+ 6ea:	11 96       	adiw	r26, 0x01	; 1
+ 6ec:	fd 01       	movw	r30, r26
+    uint8_t i=0,a[10];
+
+    if(var_hexNumber_u32==0)
+ 6ee:	61 15       	cp	r22, r1
+ 6f0:	71 05       	cpc	r23, r1
+ 6f2:	81 05       	cpc	r24, r1
+ 6f4:	91 05       	cpc	r25, r1
+ 6f6:	c1 f4       	brne	.+48     	; 0x728 <GLCD_DisplayHexNumber+0x56>
+ 6f8:	10 e0       	ldi	r17, 0x00	; 0
+    {
+        /* If the number zero then update the array with the same for displaying */
+        for(i=0;((i<var_numOfDigitsToDisplay_u8) && (i<C_GlcdMaxDigitsToDisplay_U8));i++)
+ 6fa:	14 17       	cp	r17, r20
+ 6fc:	41 f1       	breq	.+80     	; 0x74e <GLCD_DisplayHexNumber+0x7c>
+ 6fe:	1a 30       	cpi	r17, 0x0A	; 10
+ 700:	31 f1       	breq	.+76     	; 0x74e <GLCD_DisplayHexNumber+0x7c>
+            a[i] = 0x00;
+ 702:	11 92       	st	Z+, r1
+    uint8_t i=0,a[10];
+
+    if(var_hexNumber_u32==0)
+    {
+        /* If the number zero then update the array with the same for displaying */
+        for(i=0;((i<var_numOfDigitsToDisplay_u8) && (i<C_GlcdMaxDigitsToDisplay_U8));i++)
+ 704:	1f 5f       	subi	r17, 0xFF	; 255
+ 706:	f9 cf       	rjmp	.-14     	; 0x6fa <GLCD_DisplayHexNumber+0x28>
+    {
+        for(i=0;i<var_numOfDigitsToDisplay_u8;i++)
+        {
+            /* Continue extracting the digits from right side
+               till the Specified var_numOfDigitsToDisplay_u8 */
+            if(var_hexNumber_u32!=0)
+ 708:	61 15       	cp	r22, r1
+ 70a:	71 05       	cpc	r23, r1
+ 70c:	81 05       	cpc	r24, r1
+ 70e:	91 05       	cpc	r25, r1
+ 710:	81 f0       	breq	.+32     	; 0x732 <GLCD_DisplayHexNumber+0x60>
+            {
+                /* Extract the digits from the number till it becomes zero.
+               First get the lower nibble and shift the number 4 times.
+               if var_num_u32 = 0xABC then extracted digit will be 0x0C and number will become 0xAB.
+               The process continues till it becomes zero or max digits reached*/
+                a[i]=(uint8_t)(var_hexNumber_u32 & 0x0f);
+ 712:	26 2f       	mov	r18, r22
+ 714:	2f 70       	andi	r18, 0x0F	; 15
+ 716:	20 83       	st	Z, r18
+                var_hexNumber_u32=var_hexNumber_u32 >> 4;
+ 718:	24 e0       	ldi	r18, 0x04	; 4
+ 71a:	96 95       	lsr	r25
+ 71c:	87 95       	ror	r24
+ 71e:	77 95       	ror	r23
+ 720:	67 95       	ror	r22
+ 722:	2a 95       	dec	r18
+ 724:	d1 f7       	brne	.-12     	; 0x71a <GLCD_DisplayHexNumber+0x48>
+ 726:	31 96       	adiw	r30, 0x01	; 1
+ 728:	1e 2f       	mov	r17, r30
+ 72a:	1a 1b       	sub	r17, r26
+        for(i=0;((i<var_numOfDigitsToDisplay_u8) && (i<C_GlcdMaxDigitsToDisplay_U8));i++)
+            a[i] = 0x00;
+    }
+    else
+    {
+        for(i=0;i<var_numOfDigitsToDisplay_u8;i++)
+ 72c:	14 17       	cp	r17, r20
+ 72e:	60 f3       	brcs	.-40     	; 0x708 <GLCD_DisplayHexNumber+0x36>
+ 730:	0e c0       	rjmp	.+28     	; 0x74e <GLCD_DisplayHexNumber+0x7c>
+               if var_num_u32 = 0xABC then extracted digit will be 0x0C and number will become 0xAB.
+               The process continues till it becomes zero or max digits reached*/
+                a[i]=(uint8_t)(var_hexNumber_u32 & 0x0f);
+                var_hexNumber_u32=var_hexNumber_u32 >> 4;
+            }
+            else if( (var_numOfDigitsToDisplay_u8 == C_GlcdDisplayDefaultDigits_U8) ||
+ 732:	4b 30       	cpi	r20, 0x0B	; 11
+ 734:	60 f4       	brcc	.+24     	; 0x74e <GLCD_DisplayHexNumber+0x7c>
+            else
+            {
+                /* In case user expects more digits to be displayed than the actual digits in number,
+                  then update the remaining digits with zero.
+                Ex: var_num_u32 is 0x123 and user wants five digits then 00123 has to be displayed */
+                a[i]=0x00;
+ 736:	10 82       	st	Z, r1
+ 738:	f6 cf       	rjmp	.-20     	; 0x726 <GLCD_DisplayHexNumber+0x54>
+    }
+
+    while(i!=0)
+    {
+        /* Finally get the ascii values of the digits and display*/
+        GLCD_DisplayChar(util_Hex2Ascii(a[i-1]));
+ 73a:	fe 01       	movw	r30, r28
+ 73c:	e1 0f       	add	r30, r17
+ 73e:	f1 1d       	adc	r31, r1
+ 740:	80 81       	ld	r24, Z
+ 742:	8a 30       	cpi	r24, 0x0A	; 10
+ 744:	38 f0       	brcs	.+14     	; 0x754 <GLCD_DisplayHexNumber+0x82>
+ 746:	89 5c       	subi	r24, 0xC9	; 201
+ 748:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+        i--;
+ 74c:	11 50       	subi	r17, 0x01	; 1
+                a[i]=0x00;
+            }
+        }
+    }
+
+    while(i!=0)
+ 74e:	11 11       	cpse	r17, r1
+ 750:	f4 cf       	rjmp	.-24     	; 0x73a <GLCD_DisplayHexNumber+0x68>
+ 752:	02 c0       	rjmp	.+4      	; 0x758 <GLCD_DisplayHexNumber+0x86>
+    {
+        /* Finally get the ascii values of the digits and display*/
+        GLCD_DisplayChar(util_Hex2Ascii(a[i-1]));
+ 754:	80 5d       	subi	r24, 0xD0	; 208
+ 756:	f8 cf       	rjmp	.-16     	; 0x748 <GLCD_DisplayHexNumber+0x76>
+        i--;
+    }
+}
+ 758:	2a 96       	adiw	r28, 0x0a	; 10
+ 75a:	0f b6       	in	r0, 0x3f	; 63
+ 75c:	f8 94       	cli
+ 75e:	de bf       	out	0x3e, r29	; 62
+ 760:	0f be       	out	0x3f, r0	; 63
+ 762:	cd bf       	out	0x3d, r28	; 61
+ 764:	df 91       	pop	r29
+ 766:	cf 91       	pop	r28
+ 768:	1f 91       	pop	r17
+ 76a:	08 95       	ret
+
+0000076c <GLCD_DisplayBinaryNumber>:
+                2.(10,8) then 8-LSB will be displayed ie. 00001010
+                3.(10,2) then 2-LSB will be displayed ie. 10
+ *************************************************************************************************/
+#if (Enable_GLCD_DisplayBinaryNumber == 1)
+void GLCD_DisplayBinaryNumber(uint32_t var_binNumber_u32, uint8_t var_numOfBitsToDisplay_u8)
+{
+ 76c:	af 92       	push	r10
+ 76e:	bf 92       	push	r11
+ 770:	cf 92       	push	r12
+ 772:	df 92       	push	r13
+ 774:	ef 92       	push	r14
+ 776:	ff 92       	push	r15
+ 778:	0f 93       	push	r16
+ 77a:	1f 93       	push	r17
+ 77c:	cf 93       	push	r28
+ 77e:	df 93       	push	r29
+ 780:	1f 92       	push	r1
+ 782:	cd b7       	in	r28, 0x3d	; 61
+ 784:	de b7       	in	r29, 0x3e	; 62
+ 786:	6b 01       	movw	r12, r22
+ 788:	7c 01       	movw	r14, r24
+      
+    while(var_numOfBitsToDisplay_u8!=0)
+    {
+        /* Start Extracting the bits from the specified bit positions.
+         Get the Acsii values of the bits and display */
+        ch = util_GetBitStatus(var_binNumber_u32,(var_numOfBitsToDisplay_u8-1));
+ 78a:	aa 24       	eor	r10, r10
+ 78c:	a3 94       	inc	r10
+ 78e:	b1 2c       	mov	r11, r1
+#if (Enable_GLCD_DisplayBinaryNumber == 1)
+void GLCD_DisplayBinaryNumber(uint32_t var_binNumber_u32, uint8_t var_numOfBitsToDisplay_u8)
+{
+    uint8_t ch;
+      
+    while(var_numOfBitsToDisplay_u8!=0)
+ 790:	44 23       	and	r20, r20
+ 792:	e9 f0       	breq	.+58     	; 0x7ce <GLCD_DisplayBinaryNumber+0x62>
+    {
+        /* Start Extracting the bits from the specified bit positions.
+         Get the Acsii values of the bits and display */
+        ch = util_GetBitStatus(var_binNumber_u32,(var_numOfBitsToDisplay_u8-1));
+ 794:	8f ef       	ldi	r24, 0xFF	; 255
+ 796:	84 0f       	add	r24, r20
+ 798:	85 01       	movw	r16, r10
+ 79a:	02 c0       	rjmp	.+4      	; 0x7a0 <GLCD_DisplayBinaryNumber+0x34>
+ 79c:	00 0f       	add	r16, r16
+ 79e:	11 1f       	adc	r17, r17
+ 7a0:	8a 95       	dec	r24
+ 7a2:	e2 f7       	brpl	.-8      	; 0x79c <GLCD_DisplayBinaryNumber+0x30>
+ 7a4:	01 2e       	mov	r0, r17
+ 7a6:	00 0c       	add	r0, r0
+ 7a8:	22 0b       	sbc	r18, r18
+ 7aa:	33 0b       	sbc	r19, r19
+ 7ac:	0c 21       	and	r16, r12
+ 7ae:	1d 21       	and	r17, r13
+ 7b0:	2e 21       	and	r18, r14
+ 7b2:	3f 21       	and	r19, r15
+ 7b4:	81 e0       	ldi	r24, 0x01	; 1
+ 7b6:	01 2b       	or	r16, r17
+ 7b8:	02 2b       	or	r16, r18
+ 7ba:	03 2b       	or	r16, r19
+ 7bc:	09 f4       	brne	.+2      	; 0x7c0 <GLCD_DisplayBinaryNumber+0x54>
+ 7be:	80 e0       	ldi	r24, 0x00	; 0
+        GLCD_DisplayChar(util_Dec2Ascii(ch));
+ 7c0:	80 5d       	subi	r24, 0xD0	; 208
+ 7c2:	49 83       	std	Y+1, r20	; 0x01
+ 7c4:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+        var_numOfBitsToDisplay_u8--;
+ 7c8:	49 81       	ldd	r20, Y+1	; 0x01
+ 7ca:	41 50       	subi	r20, 0x01	; 1
+ 7cc:	e1 cf       	rjmp	.-62     	; 0x790 <GLCD_DisplayBinaryNumber+0x24>
+    }
+}
+ 7ce:	0f 90       	pop	r0
+ 7d0:	df 91       	pop	r29
+ 7d2:	cf 91       	pop	r28
+ 7d4:	1f 91       	pop	r17
+ 7d6:	0f 91       	pop	r16
+ 7d8:	ff 90       	pop	r15
+ 7da:	ef 90       	pop	r14
+ 7dc:	df 90       	pop	r13
+ 7de:	cf 90       	pop	r12
+ 7e0:	bf 90       	pop	r11
+ 7e2:	af 90       	pop	r10
+ 7e4:	08 95       	ret
+
+000007e6 <GLCD_DisplayFloatNumber>:
+    Note: Float will be disabled by default as it takes huge controller resources
+         It can be enabled by changing value of Enable_GLCD_DisplayFloatNumber to 1 in lcd.h
+ **************************************************************************************************/
+#if (Enable_GLCD_DisplayFloatNumber == 1)  
+void GLCD_DisplayFloatNumber(double var_floatNum_f32)
+{
+ 7e6:	8f 92       	push	r8
+ 7e8:	9f 92       	push	r9
+ 7ea:	af 92       	push	r10
+ 7ec:	bf 92       	push	r11
+ 7ee:	cf 92       	push	r12
+ 7f0:	df 92       	push	r13
+ 7f2:	ef 92       	push	r14
+ 7f4:	ff 92       	push	r15
+ 7f6:	6b 01       	movw	r12, r22
+ 7f8:	7c 01       	movw	r14, r24
+      1.Type cast the number to int to get the integer part.
+      2.Display the extracted integer part followed by a decimal point(.).
+      3.Later the integer part is made zero by subtracting with the extracted integer value.
+      4.Finally the fractional part is multiplied by 100000 to support 6-digit precision */
+
+    var_temp_u32 = (uint32_t) var_floatNum_f32;
+ 7fa:	0e 94 fa 05 	call	0xbf4	; 0xbf4 <__fixunssfsi>
+ 7fe:	4b 01       	movw	r8, r22
+ 800:	5c 01       	movw	r10, r24
+    GLCD_DisplayDecimalNumber(var_temp_u32,C_GlcdDisplayDefaultDigits_U8);
+ 802:	4f ef       	ldi	r20, 0xFF	; 255
+ 804:	0e 94 03 03 	call	0x606	; 0x606 <GLCD_DisplayDecimalNumber>
+
+    GLCD_DisplayChar('.');
+ 808:	8e e2       	ldi	r24, 0x2E	; 46
+ 80a:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+
+    var_floatNum_f32 = var_floatNum_f32 - var_temp_u32;
+ 80e:	c5 01       	movw	r24, r10
+ 810:	b4 01       	movw	r22, r8
+ 812:	0e 94 29 06 	call	0xc52	; 0xc52 <__floatunsisf>
+ 816:	9b 01       	movw	r18, r22
+ 818:	ac 01       	movw	r20, r24
+ 81a:	c7 01       	movw	r24, r14
+ 81c:	b6 01       	movw	r22, r12
+ 81e:	0e 94 8d 05 	call	0xb1a	; 0xb1a <__subsf3>
+    var_temp_u32 = var_floatNum_f32 * 1000000;
+ 822:	20 e0       	ldi	r18, 0x00	; 0
+ 824:	34 e2       	ldi	r19, 0x24	; 36
+ 826:	44 e7       	ldi	r20, 0x74	; 116
+ 828:	59 e4       	ldi	r21, 0x49	; 73
+ 82a:	0e 94 b7 06 	call	0xd6e	; 0xd6e <__mulsf3>
+ 82e:	0e 94 fa 05 	call	0xbf4	; 0xbf4 <__fixunssfsi>
+    GLCD_DisplayDecimalNumber(var_temp_u32,C_GlcdDisplayDefaultDigits_U8);
+ 832:	4f ef       	ldi	r20, 0xFF	; 255
+}
+ 834:	ff 90       	pop	r15
+ 836:	ef 90       	pop	r14
+ 838:	df 90       	pop	r13
+ 83a:	cf 90       	pop	r12
+ 83c:	bf 90       	pop	r11
+ 83e:	af 90       	pop	r10
+ 840:	9f 90       	pop	r9
+ 842:	8f 90       	pop	r8
+
+    GLCD_DisplayChar('.');
+
+    var_floatNum_f32 = var_floatNum_f32 - var_temp_u32;
+    var_temp_u32 = var_floatNum_f32 * 1000000;
+    GLCD_DisplayDecimalNumber(var_temp_u32,C_GlcdDisplayDefaultDigits_U8);
+ 844:	0c 94 03 03 	jmp	0x606	; 0x606 <GLCD_DisplayDecimalNumber>
+
+00000848 <GLCD_Printf>:
+        uint8_t var_Num_u8;
+        GLCD_Printf("num1:%u",(uint16_t)var_Num_u8);          
+ *************************************************************************************************/
+#if ( Enable_GLCD_Printf   == 1 ) 
+void GLCD_Printf(const char *argList, ...)
+{
+ 848:	8f 92       	push	r8
+ 84a:	9f 92       	push	r9
+ 84c:	af 92       	push	r10
+ 84e:	bf 92       	push	r11
+ 850:	cf 92       	push	r12
+ 852:	df 92       	push	r13
+ 854:	ef 92       	push	r14
+ 856:	ff 92       	push	r15
+ 858:	0f 93       	push	r16
+ 85a:	1f 93       	push	r17
+ 85c:	cf 93       	push	r28
+ 85e:	df 93       	push	r29
+ 860:	1f 92       	push	r1
+ 862:	cd b7       	in	r28, 0x3d	; 61
+ 864:	de b7       	in	r29, 0x3e	; 62
+ 866:	fe 01       	movw	r30, r28
+ 868:	70 96       	adiw	r30, 0x10	; 16
+ 86a:	c1 90       	ld	r12, Z+
+ 86c:	d1 90       	ld	r13, Z+
+    uint32_t var_num_u32;
+    char *str;
+    char  ch;
+    uint8_t var_numOfDigitsToDisp_u8;
+
+    va_start(argp, argList);
+ 86e:	8f 01       	movw	r16, r30
+
+    /* Loop through the list to extract all the input arguments */
+    for(ptr = argList; *ptr != '\0'; ptr++)
+ 870:	f6 01       	movw	r30, r12
+ 872:	80 81       	ld	r24, Z
+ 874:	88 23       	and	r24, r24
+ 876:	09 f4       	brne	.+2      	; 0x87a <__stack+0x1b>
+ 878:	25 c1       	rjmp	.+586    	; 0xac4 <__stack+0x265>
+    {
+
+        ch= *ptr;
+        if(ch == '%')         /*Check for '%' as there will be format specifier after it */
+ 87a:	85 32       	cpi	r24, 0x25	; 37
+ 87c:	09 f0       	breq	.+2      	; 0x880 <__stack+0x21>
+ 87e:	07 c1       	rjmp	.+526    	; 0xa8e <__stack+0x22f>
+        {
+            ptr++;
+ 880:	76 01       	movw	r14, r12
+ 882:	8f ef       	ldi	r24, 0xFF	; 255
+ 884:	e8 1a       	sub	r14, r24
+ 886:	f8 0a       	sbc	r15, r24
+            ch = *ptr;
+ 888:	f6 01       	movw	r30, r12
+ 88a:	81 81       	ldd	r24, Z+1	; 0x01
+           if((ch>=0x30) && (ch<=0x39))
+ 88c:	90 ed       	ldi	r25, 0xD0	; 208
+ 88e:	98 0f       	add	r25, r24
+ 890:	9a 30       	cpi	r25, 0x0A	; 10
+ 892:	08 f0       	brcs	.+2      	; 0x896 <__stack+0x37>
+ 894:	b2 c0       	rjmp	.+356    	; 0x9fa <__stack+0x19b>
+ 896:	40 e0       	ldi	r20, 0x00	; 0
+            {
+               var_numOfDigitsToDisp_u8 = 0;
+               while((ch>=0x30) && (ch<=0x39))
+ 898:	90 ed       	ldi	r25, 0xD0	; 208
+ 89a:	98 0f       	add	r25, r24
+ 89c:	9a 30       	cpi	r25, 0x0A	; 10
+ 89e:	58 f4       	brcc	.+22     	; 0x8b6 <__stack+0x57>
+                {
+                   var_numOfDigitsToDisp_u8 = (var_numOfDigitsToDisp_u8 * 10) + (ch-0x30);
+ 8a0:	fa e0       	ldi	r31, 0x0A	; 10
+ 8a2:	4f 9f       	mul	r20, r31
+ 8a4:	90 0d       	add	r25, r0
+ 8a6:	11 24       	eor	r1, r1
+ 8a8:	49 2f       	mov	r20, r25
+                   ptr++;
+ 8aa:	8f ef       	ldi	r24, 0xFF	; 255
+ 8ac:	e8 1a       	sub	r14, r24
+ 8ae:	f8 0a       	sbc	r15, r24
+                   ch = *ptr;
+ 8b0:	f7 01       	movw	r30, r14
+ 8b2:	80 81       	ld	r24, Z
+ 8b4:	f1 cf       	rjmp	.-30     	; 0x898 <__stack+0x39>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 8b6:	88 35       	cpi	r24, 0x58	; 88
+ 8b8:	09 f4       	brne	.+2      	; 0x8bc <__stack+0x5d>
+ 8ba:	a3 c0       	rjmp	.+326    	; 0xa02 <__stack+0x1a3>
+ 8bc:	70 f4       	brcc	.+28     	; 0x8da <__stack+0x7b>
+ 8be:	84 34       	cpi	r24, 0x44	; 68
+ 8c0:	09 f4       	brne	.+2      	; 0x8c4 <__stack+0x65>
+ 8c2:	4f c0       	rjmp	.+158    	; 0x962 <__stack+0x103>
+ 8c4:	18 f4       	brcc	.+6      	; 0x8cc <__stack+0x6d>
+ 8c6:	82 34       	cpi	r24, 0x42	; 66
+ 8c8:	d9 f4       	brne	.+54     	; 0x900 <__stack+0xa1>
+ 8ca:	b7 c0       	rjmp	.+366    	; 0xa3a <__stack+0x1db>
+ 8cc:	83 35       	cpi	r24, 0x53	; 83
+ 8ce:	09 f4       	brne	.+2      	; 0x8d2 <__stack+0x73>
+ 8d0:	d3 c0       	rjmp	.+422    	; 0xa78 <__stack+0x219>
+ 8d2:	85 35       	cpi	r24, 0x55	; 85
+ 8d4:	09 f4       	brne	.+2      	; 0x8d8 <__stack+0x79>
+ 8d6:	77 c0       	rjmp	.+238    	; 0x9c6 <__stack+0x167>
+ 8d8:	bf c0       	rjmp	.+382    	; 0xa58 <__stack+0x1f9>
+ 8da:	86 36       	cpi	r24, 0x66	; 102
+ 8dc:	09 f4       	brne	.+2      	; 0x8e0 <__stack+0x81>
+ 8de:	be c0       	rjmp	.+380    	; 0xa5c <__stack+0x1fd>
+ 8e0:	40 f4       	brcc	.+16     	; 0x8f2 <__stack+0x93>
+ 8e2:	83 36       	cpi	r24, 0x63	; 99
+ 8e4:	81 f0       	breq	.+32     	; 0x906 <__stack+0xa7>
+ 8e6:	84 36       	cpi	r24, 0x64	; 100
+ 8e8:	19 f1       	breq	.+70     	; 0x930 <__stack+0xd1>
+ 8ea:	82 36       	cpi	r24, 0x62	; 98
+ 8ec:	09 f0       	breq	.+2      	; 0x8f0 <__stack+0x91>
+ 8ee:	d2 c0       	rjmp	.+420    	; 0xa94 <__stack+0x235>
+ 8f0:	97 c0       	rjmp	.+302    	; 0xa20 <__stack+0x1c1>
+ 8f2:	85 37       	cpi	r24, 0x75	; 117
+ 8f4:	09 f4       	brne	.+2      	; 0x8f8 <__stack+0x99>
+ 8f6:	53 c0       	rjmp	.+166    	; 0x99e <__stack+0x13f>
+ 8f8:	88 37       	cpi	r24, 0x78	; 120
+ 8fa:	09 f4       	brne	.+2      	; 0x8fe <__stack+0x9f>
+ 8fc:	74 c0       	rjmp	.+232    	; 0x9e6 <__stack+0x187>
+ 8fe:	ba c0       	rjmp	.+372    	; 0xa74 <__stack+0x215>
+ 900:	83 34       	cpi	r24, 0x43	; 67
+ 902:	08 f4       	brcc	.+2      	; 0x906 <__stack+0xa7>
+ 904:	d9 c0       	rjmp	.+434    	; 0xab8 <__stack+0x259>
+            {
+            case 'C':
+            case 'c':     /* Argument type is of char, hence read char data from the argp */
+                ch = va_arg(argp, uint16_t);
+ 906:	68 01       	movw	r12, r16
+ 908:	f2 e0       	ldi	r31, 0x02	; 2
+ 90a:	cf 0e       	add	r12, r31
+ 90c:	d1 1c       	adc	r13, r1
+                GLCD_DisplayChar(ch);
+ 90e:	f8 01       	movw	r30, r16
+ 910:	80 81       	ld	r24, Z
+ 912:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+ 916:	b9 c0       	rjmp	.+370    	; 0xa8a <__stack+0x22b>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 918:	89 35       	cpi	r24, 0x59	; 89
+ 91a:	00 f1       	brcs	.+64     	; 0x95c <__stack+0xfd>
+ 91c:	86 36       	cpi	r24, 0x66	; 102
+ 91e:	09 f4       	brne	.+2      	; 0x922 <__stack+0xc3>
+ 920:	9d c0       	rjmp	.+314    	; 0xa5c <__stack+0x1fd>
+ 922:	d0 f5       	brcc	.+116    	; 0x998 <__stack+0x139>
+ 924:	83 36       	cpi	r24, 0x63	; 99
+ 926:	79 f3       	breq	.-34     	; 0x906 <__stack+0xa7>
+ 928:	84 36       	cpi	r24, 0x64	; 100
+ 92a:	09 f0       	breq	.+2      	; 0x92e <__stack+0xcf>
+ 92c:	76 c0       	rjmp	.+236    	; 0xa1a <__stack+0x1bb>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ 92e:	4f ef       	ldi	r20, 0xFF	; 255
+                ch = va_arg(argp, uint16_t);
+                GLCD_DisplayChar(ch);
+                break;
+
+            case 'd':    /* Argument type is of signed integer, hence read 16bit data from the argp */
+                var_num_s16 = va_arg(argp, sint16_t);
+ 930:	68 01       	movw	r12, r16
+ 932:	f2 e0       	ldi	r31, 0x02	; 2
+ 934:	cf 0e       	add	r12, r31
+ 936:	d1 1c       	adc	r13, r1
+ 938:	f8 01       	movw	r30, r16
+ 93a:	00 81       	ld	r16, Z
+ 93c:	11 81       	ldd	r17, Z+1	; 0x01
+#if (Enable_GLCD_DisplayDecimalNumber == 1)
+                if(var_num_s16<0)
+ 93e:	17 ff       	sbrs	r17, 7
+ 940:	08 c0       	rjmp	.+16     	; 0x952 <__stack+0xf3>
+                 { /* If the number is -ve then display the 2's complement along with '-' sign */ 
+                   var_num_s16 = -var_num_s16;
+ 942:	11 95       	neg	r17
+ 944:	01 95       	neg	r16
+ 946:	11 09       	sbc	r17, r1
+                   GLCD_DisplayChar('-');
+ 948:	8d e2       	ldi	r24, 0x2D	; 45
+ 94a:	49 83       	std	Y+1, r20	; 0x01
+ 94c:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+ 950:	49 81       	ldd	r20, Y+1	; 0x01
+                 }
+                GLCD_DisplayDecimalNumber(var_num_s16,var_numOfDigitsToDisp_u8);
+ 952:	b8 01       	movw	r22, r16
+ 954:	11 0f       	add	r17, r17
+ 956:	88 0b       	sbc	r24, r24
+ 958:	99 0b       	sbc	r25, r25
+ 95a:	3e c0       	rjmp	.+124    	; 0x9d8 <__stack+0x179>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 95c:	84 34       	cpi	r24, 0x44	; 68
+ 95e:	49 f5       	brne	.+82     	; 0x9b2 <__stack+0x153>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ 960:	4f ef       	ldi	r20, 0xFF	; 255
+                GLCD_DisplayDecimalNumber(var_num_s16,var_numOfDigitsToDisp_u8);
+#endif
+                break;
+                
+            case 'D':    /* Argument type is of integer, hence read 16bit data from the argp */
+                var_num_s32 = va_arg(argp, sint32_t);
+ 962:	68 01       	movw	r12, r16
+ 964:	f4 e0       	ldi	r31, 0x04	; 4
+ 966:	cf 0e       	add	r12, r31
+ 968:	d1 1c       	adc	r13, r1
+ 96a:	f8 01       	movw	r30, r16
+ 96c:	80 80       	ld	r8, Z
+ 96e:	91 80       	ldd	r9, Z+1	; 0x01
+ 970:	a2 80       	ldd	r10, Z+2	; 0x02
+ 972:	b3 80       	ldd	r11, Z+3	; 0x03
+#if (Enable_GLCD_DisplayDecimalNumber == 1)                
+                if(var_num_s32<0)
+ 974:	b7 fe       	sbrs	r11, 7
+ 976:	0d c0       	rjmp	.+26     	; 0x992 <__stack+0x133>
+                 { /* If the number is -ve then display the 2's complement along with '-' sign */
+                   var_num_s32 = -var_num_s32;
+ 978:	b0 94       	com	r11
+ 97a:	a0 94       	com	r10
+ 97c:	90 94       	com	r9
+ 97e:	80 94       	com	r8
+ 980:	81 1c       	adc	r8, r1
+ 982:	91 1c       	adc	r9, r1
+ 984:	a1 1c       	adc	r10, r1
+ 986:	b1 1c       	adc	r11, r1
+                   GLCD_DisplayChar('-');
+ 988:	8d e2       	ldi	r24, 0x2D	; 45
+ 98a:	49 83       	std	Y+1, r20	; 0x01
+ 98c:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+ 990:	49 81       	ldd	r20, Y+1	; 0x01
+                 }
+                GLCD_DisplayDecimalNumber(var_num_s32,var_numOfDigitsToDisp_u8);
+ 992:	c5 01       	movw	r24, r10
+ 994:	b4 01       	movw	r22, r8
+ 996:	20 c0       	rjmp	.+64     	; 0x9d8 <__stack+0x179>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 998:	85 37       	cpi	r24, 0x75	; 117
+ 99a:	09 f5       	brne	.+66     	; 0x9de <__stack+0x17f>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ 99c:	4f ef       	ldi	r20, 0xFF	; 255
+                GLCD_DisplayDecimalNumber(var_num_s32,var_numOfDigitsToDisp_u8);
+#endif                
+                break;    
+
+            case 'u':    /* Argument type is of unsigned integer, hence read 16bit unsigned data */
+                var_num_u16 = va_arg(argp, uint16_t);
+ 99e:	68 01       	movw	r12, r16
+ 9a0:	f2 e0       	ldi	r31, 0x02	; 2
+ 9a2:	cf 0e       	add	r12, r31
+ 9a4:	d1 1c       	adc	r13, r1
+#if (Enable_GLCD_DisplayDecimalNumber == 1)                
+                GLCD_DisplayDecimalNumber(var_num_u16,var_numOfDigitsToDisp_u8);
+ 9a6:	f8 01       	movw	r30, r16
+ 9a8:	60 81       	ld	r22, Z
+ 9aa:	71 81       	ldd	r23, Z+1	; 0x01
+ 9ac:	80 e0       	ldi	r24, 0x00	; 0
+ 9ae:	90 e0       	ldi	r25, 0x00	; 0
+ 9b0:	13 c0       	rjmp	.+38     	; 0x9d8 <__stack+0x179>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 9b2:	85 34       	cpi	r24, 0x45	; 69
+ 9b4:	08 f4       	brcc	.+2      	; 0x9b8 <__stack+0x159>
+ 9b6:	73 c0       	rjmp	.+230    	; 0xa9e <__stack+0x23f>
+ 9b8:	83 35       	cpi	r24, 0x53	; 83
+ 9ba:	09 f4       	brne	.+2      	; 0x9be <__stack+0x15f>
+ 9bc:	5d c0       	rjmp	.+186    	; 0xa78 <__stack+0x219>
+ 9be:	85 35       	cpi	r24, 0x55	; 85
+ 9c0:	09 f0       	breq	.+2      	; 0x9c4 <__stack+0x165>
+ 9c2:	4a c0       	rjmp	.+148    	; 0xa58 <__stack+0x1f9>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ 9c4:	4f ef       	ldi	r20, 0xFF	; 255
+                GLCD_DisplayDecimalNumber(var_num_u16,var_numOfDigitsToDisp_u8);
+#endif                
+                break;
+            
+            case 'U':    /* Argument type is of integer, hence read 32bit unsigend data */
+                var_num_u32 = va_arg(argp, uint32_t);
+ 9c6:	68 01       	movw	r12, r16
+ 9c8:	f4 e0       	ldi	r31, 0x04	; 4
+ 9ca:	cf 0e       	add	r12, r31
+ 9cc:	d1 1c       	adc	r13, r1
+#if (Enable_GLCD_DisplayDecimalNumber == 1)                
+                GLCD_DisplayDecimalNumber(var_num_u32,var_numOfDigitsToDisp_u8);
+ 9ce:	f8 01       	movw	r30, r16
+ 9d0:	60 81       	ld	r22, Z
+ 9d2:	71 81       	ldd	r23, Z+1	; 0x01
+ 9d4:	82 81       	ldd	r24, Z+2	; 0x02
+ 9d6:	93 81       	ldd	r25, Z+3	; 0x03
+ 9d8:	0e 94 03 03 	call	0x606	; 0x606 <GLCD_DisplayDecimalNumber>
+ 9dc:	56 c0       	rjmp	.+172    	; 0xa8a <__stack+0x22b>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 9de:	88 37       	cpi	r24, 0x78	; 120
+ 9e0:	09 f0       	breq	.+2      	; 0x9e4 <__stack+0x185>
+ 9e2:	48 c0       	rjmp	.+144    	; 0xa74 <__stack+0x215>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ 9e4:	4f ef       	ldi	r20, 0xFF	; 255
+                GLCD_DisplayDecimalNumber(var_num_u32,var_numOfDigitsToDisp_u8);
+#endif                
+                break;            
+
+            case 'x':  /* Argument type is of hex, hence hexadecimal data from the argp */
+                var_num_u16 = va_arg(argp, uint16_t);
+ 9e6:	68 01       	movw	r12, r16
+ 9e8:	f2 e0       	ldi	r31, 0x02	; 2
+ 9ea:	cf 0e       	add	r12, r31
+ 9ec:	d1 1c       	adc	r13, r1
+#if (Enable_GLCD_DisplayHexNumber == 1)                
+                GLCD_DisplayHexNumber(var_num_u16,var_numOfDigitsToDisp_u8);
+ 9ee:	f8 01       	movw	r30, r16
+ 9f0:	60 81       	ld	r22, Z
+ 9f2:	71 81       	ldd	r23, Z+1	; 0x01
+ 9f4:	80 e0       	ldi	r24, 0x00	; 0
+ 9f6:	90 e0       	ldi	r25, 0x00	; 0
+ 9f8:	0d c0       	rjmp	.+26     	; 0xa14 <__stack+0x1b5>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ 9fa:	88 35       	cpi	r24, 0x58	; 88
+ 9fc:	09 f0       	breq	.+2      	; 0xa00 <__stack+0x1a1>
+ 9fe:	8c cf       	rjmp	.-232    	; 0x918 <__stack+0xb9>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ a00:	4f ef       	ldi	r20, 0xFF	; 255
+                GLCD_DisplayHexNumber(var_num_u16,var_numOfDigitsToDisp_u8);
+#endif                
+                break;
+
+            case 'X':  /* Argument type is of hex, hence hexadecimal data from the argp */
+                var_num_u32 = va_arg(argp, uint32_t);
+ a02:	68 01       	movw	r12, r16
+ a04:	f4 e0       	ldi	r31, 0x04	; 4
+ a06:	cf 0e       	add	r12, r31
+ a08:	d1 1c       	adc	r13, r1
+#if (Enable_GLCD_DisplayHexNumber == 1)                        
+                GLCD_DisplayHexNumber(var_num_u32,var_numOfDigitsToDisp_u8);
+ a0a:	f8 01       	movw	r30, r16
+ a0c:	60 81       	ld	r22, Z
+ a0e:	71 81       	ldd	r23, Z+1	; 0x01
+ a10:	82 81       	ldd	r24, Z+2	; 0x02
+ a12:	93 81       	ldd	r25, Z+3	; 0x03
+ a14:	0e 94 69 03 	call	0x6d2	; 0x6d2 <GLCD_DisplayHexNumber>
+ a18:	38 c0       	rjmp	.+112    	; 0xa8a <__stack+0x22b>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ a1a:	82 36       	cpi	r24, 0x62	; 98
+ a1c:	d9 f5       	brne	.+118    	; 0xa94 <__stack+0x235>
+                   ch = *ptr;
+                }
+            }
+            else
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+ a1e:	4f ef       	ldi	r20, 0xFF	; 255
+#endif                
+                break;
+
+            
+            case 'b':  /* Argument type is of binary,Read int and convert to binary */
+                var_num_u16 = va_arg(argp, uint16_t);
+ a20:	68 01       	movw	r12, r16
+ a22:	f2 e0       	ldi	r31, 0x02	; 2
+ a24:	cf 0e       	add	r12, r31
+ a26:	d1 1c       	adc	r13, r1
+ a28:	f8 01       	movw	r30, r16
+ a2a:	60 81       	ld	r22, Z
+ a2c:	71 81       	ldd	r23, Z+1	; 0x01
+#if (Enable_GLCD_DisplayBinaryNumber == 1)                        
+                if(var_numOfDigitsToDisp_u8 == C_GlcdMaxDigitsToDisplayUsingPrintf_U8)
+ a2e:	4f 3f       	cpi	r20, 0xFF	; 255
+ a30:	09 f4       	brne	.+2      	; 0xa34 <__stack+0x1d5>
+                   var_numOfDigitsToDisp_u8 = 16;
+ a32:	40 e1       	ldi	r20, 0x10	; 16
+                GLCD_DisplayBinaryNumber(var_num_u16,var_numOfDigitsToDisp_u8);
+ a34:	80 e0       	ldi	r24, 0x00	; 0
+ a36:	90 e0       	ldi	r25, 0x00	; 0
+ a38:	0c c0       	rjmp	.+24     	; 0xa52 <__stack+0x1f3>
+#endif                
+                break;
+
+            case 'B':  /* Argument type is of binary,Read int and convert to binary */
+                var_num_u32 = va_arg(argp, uint32_t);
+ a3a:	68 01       	movw	r12, r16
+ a3c:	f4 e0       	ldi	r31, 0x04	; 4
+ a3e:	cf 0e       	add	r12, r31
+ a40:	d1 1c       	adc	r13, r1
+ a42:	f8 01       	movw	r30, r16
+ a44:	60 81       	ld	r22, Z
+ a46:	71 81       	ldd	r23, Z+1	; 0x01
+ a48:	82 81       	ldd	r24, Z+2	; 0x02
+ a4a:	93 81       	ldd	r25, Z+3	; 0x03
+#if (Enable_GLCD_DisplayBinaryNumber == 1)                
+                if(var_numOfDigitsToDisp_u8 == C_GlcdMaxDigitsToDisplayUsingPrintf_U8)
+ a4c:	4f 3f       	cpi	r20, 0xFF	; 255
+ a4e:	09 f4       	brne	.+2      	; 0xa52 <__stack+0x1f3>
+                   var_numOfDigitsToDisp_u8 = 16;                
+ a50:	40 e1       	ldi	r20, 0x10	; 16
+                GLCD_DisplayBinaryNumber(var_num_u32,var_numOfDigitsToDisp_u8);    
+ a52:	0e 94 b6 03 	call	0x76c	; 0x76c <GLCD_DisplayBinaryNumber>
+ a56:	19 c0       	rjmp	.+50     	; 0xa8a <__stack+0x22b>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ a58:	86 34       	cpi	r24, 0x46	; 70
+ a5a:	e1 f4       	brne	.+56     	; 0xa94 <__stack+0x235>
+                break;
+
+
+            case 'F':
+            case 'f': /* Argument type is of float, hence read double data from the argp */
+                var_floatNum_f32 = va_arg(argp, double);
+ a5c:	68 01       	movw	r12, r16
+ a5e:	f4 e0       	ldi	r31, 0x04	; 4
+ a60:	cf 0e       	add	r12, r31
+ a62:	d1 1c       	adc	r13, r1
+#if (Enable_GLCD_DisplayFloatNumber == 1)                
+                GLCD_DisplayFloatNumber(var_floatNum_f32);
+ a64:	f8 01       	movw	r30, r16
+ a66:	60 81       	ld	r22, Z
+ a68:	71 81       	ldd	r23, Z+1	; 0x01
+ a6a:	82 81       	ldd	r24, Z+2	; 0x02
+ a6c:	93 81       	ldd	r25, Z+3	; 0x03
+ a6e:	0e 94 f3 03 	call	0x7e6	; 0x7e6 <GLCD_DisplayFloatNumber>
+ a72:	0b c0       	rjmp	.+22     	; 0xa8a <__stack+0x22b>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ a74:	83 37       	cpi	r24, 0x73	; 115
+ a76:	71 f4       	brne	.+28     	; 0xa94 <__stack+0x235>
+                break;
+
+
+            case 'S':
+            case 's': /* Argument type is of string, hence get the pointer to sting passed */
+                str = va_arg(argp, char *);
+ a78:	68 01       	movw	r12, r16
+ a7a:	f2 e0       	ldi	r31, 0x02	; 2
+ a7c:	cf 0e       	add	r12, r31
+ a7e:	d1 1c       	adc	r13, r1
+#if (Enable_GLCD_DisplayString == 1)
+                GLCD_DisplayString(str);
+ a80:	f8 01       	movw	r30, r16
+ a82:	80 81       	ld	r24, Z
+ a84:	91 81       	ldd	r25, Z+1	; 0x01
+ a86:	0e 94 f7 02 	call	0x5ee	; 0x5ee <GLCD_DisplayString>
+                break;
+
+
+            case 'S':
+            case 's': /* Argument type is of string, hence get the pointer to sting passed */
+                str = va_arg(argp, char *);
+ a8a:	86 01       	movw	r16, r12
+#if (Enable_GLCD_DisplayString == 1)
+                GLCD_DisplayString(str);
+#endif                
+                break;
+ a8c:	03 c0       	rjmp	.+6      	; 0xa94 <__stack+0x235>
+            }
+        }
+        else
+        {
+            /* As '%' is not detected display/transmit the char passed */
+            GLCD_DisplayChar(ch);
+ a8e:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+ a92:	76 01       	movw	r14, r12
+    uint8_t var_numOfDigitsToDisp_u8;
+
+    va_start(argp, argList);
+
+    /* Loop through the list to extract all the input arguments */
+    for(ptr = argList; *ptr != '\0'; ptr++)
+ a94:	67 01       	movw	r12, r14
+ a96:	ff ef       	ldi	r31, 0xFF	; 255
+ a98:	cf 1a       	sub	r12, r31
+ a9a:	df 0a       	sbc	r13, r31
+ a9c:	e9 ce       	rjmp	.-558    	; 0x870 <__stack+0x11>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ a9e:	82 34       	cpi	r24, 0x42	; 66
+ aa0:	09 f0       	breq	.+2      	; 0xaa4 <__stack+0x245>
+ aa2:	2e cf       	rjmp	.-420    	; 0x900 <__stack+0xa1>
+                GLCD_DisplayBinaryNumber(var_num_u16,var_numOfDigitsToDisp_u8);
+#endif                
+                break;
+
+            case 'B':  /* Argument type is of binary,Read int and convert to binary */
+                var_num_u32 = va_arg(argp, uint32_t);
+ aa4:	68 01       	movw	r12, r16
+ aa6:	f4 e0       	ldi	r31, 0x04	; 4
+ aa8:	cf 0e       	add	r12, r31
+ aaa:	d1 1c       	adc	r13, r1
+ aac:	f8 01       	movw	r30, r16
+ aae:	60 81       	ld	r22, Z
+ ab0:	71 81       	ldd	r23, Z+1	; 0x01
+ ab2:	82 81       	ldd	r24, Z+2	; 0x02
+ ab4:	93 81       	ldd	r25, Z+3	; 0x03
+ ab6:	cc cf       	rjmp	.-104    	; 0xa50 <__stack+0x1f1>
+            {
+              var_numOfDigitsToDisp_u8 = C_GlcdMaxDigitsToDisplayUsingPrintf_U8;
+            }
+
+
+            switch(ch)       /* Decode the type of the argument */
+ ab8:	85 32       	cpi	r24, 0x25	; 37
+ aba:	61 f7       	brne	.-40     	; 0xa94 <__stack+0x235>
+                GLCD_DisplayString(str);
+#endif                
+                break;
+
+            case '%':
+                GLCD_DisplayChar('%');
+ abc:	85 e2       	ldi	r24, 0x25	; 37
+ abe:	0e 94 c3 02 	call	0x586	; 0x586 <GLCD_DisplayChar>
+                break;
+ ac2:	e8 cf       	rjmp	.-48     	; 0xa94 <__stack+0x235>
+            GLCD_DisplayChar(ch);
+        }
+    }
+
+    va_end(argp);
+}
+ ac4:	0f 90       	pop	r0
+ ac6:	df 91       	pop	r29
+ ac8:	cf 91       	pop	r28
+ aca:	1f 91       	pop	r17
+ acc:	0f 91       	pop	r16
+ ace:	ff 90       	pop	r15
+ ad0:	ef 90       	pop	r14
+ ad2:	df 90       	pop	r13
+ ad4:	cf 90       	pop	r12
+ ad6:	bf 90       	pop	r11
+ ad8:	af 90       	pop	r10
+ ada:	9f 90       	pop	r9
+ adc:	8f 90       	pop	r8
+ ade:	08 95       	ret
+
+00000ae0 <main>:
+
+/* start the main program */
+int main(void) 
+{
+	
+	  GLCD_Init();
+ ae0:	0e 94 99 02 	call	0x532	; 0x532 <GLCD_Init>
+	  GLCD_Printf("Hello World!");
+ ae4:	80 e6       	ldi	r24, 0x60	; 96
+ ae6:	90 e0       	ldi	r25, 0x00	; 0
+ ae8:	9f 93       	push	r25
+ aea:	8f 93       	push	r24
+ aec:	0e 94 24 04 	call	0x848	; 0x848 <GLCD_Printf>
+	  GLCD_GoToLine(4);
+ af0:	84 e0       	ldi	r24, 0x04	; 4
+ af2:	0e 94 6a 02 	call	0x4d4	; 0x4d4 <GLCD_GoToLine>
+	  GLCD_Printf("*&^%$#@!~");
+ af6:	8d e6       	ldi	r24, 0x6D	; 109
+ af8:	90 e0       	ldi	r25, 0x00	; 0
+ afa:	9f 93       	push	r25
+ afc:	8f 93       	push	r24
+ afe:	0e 94 24 04 	call	0x848	; 0x848 <GLCD_Printf>
+	  GLCD_GoToLine(7);
+ b02:	87 e0       	ldi	r24, 0x07	; 7
+ b04:	0e 94 6a 02 	call	0x4d4	; 0x4d4 <GLCD_GoToLine>
+	  GLCD_DisplayString("Well this is the end!");
+ b08:	87 e7       	ldi	r24, 0x77	; 119
+ b0a:	90 e0       	ldi	r25, 0x00	; 0
+ b0c:	0e 94 f7 02 	call	0x5ee	; 0x5ee <GLCD_DisplayString>
+ b10:	0f 90       	pop	r0
+ b12:	0f 90       	pop	r0
+ b14:	0f 90       	pop	r0
+ b16:	0f 90       	pop	r0
+	  while(1);
+ b18:	ff cf       	rjmp	.-2      	; 0xb18 <main+0x38>
+
+00000b1a <__subsf3>:
+ b1a:	50 58       	subi	r21, 0x80	; 128
+
+00000b1c <__addsf3>:
+ b1c:	bb 27       	eor	r27, r27
+ b1e:	aa 27       	eor	r26, r26
+ b20:	0e 94 a5 05 	call	0xb4a	; 0xb4a <__addsf3x>
+ b24:	0c 94 7d 06 	jmp	0xcfa	; 0xcfa <__fp_round>
+ b28:	0e 94 6f 06 	call	0xcde	; 0xcde <__fp_pscA>
+ b2c:	38 f0       	brcs	.+14     	; 0xb3c <__addsf3+0x20>
+ b2e:	0e 94 76 06 	call	0xcec	; 0xcec <__fp_pscB>
+ b32:	20 f0       	brcs	.+8      	; 0xb3c <__addsf3+0x20>
+ b34:	39 f4       	brne	.+14     	; 0xb44 <__addsf3+0x28>
+ b36:	9f 3f       	cpi	r25, 0xFF	; 255
+ b38:	19 f4       	brne	.+6      	; 0xb40 <__addsf3+0x24>
+ b3a:	26 f4       	brtc	.+8      	; 0xb44 <__addsf3+0x28>
+ b3c:	0c 94 6c 06 	jmp	0xcd8	; 0xcd8 <__fp_nan>
+ b40:	0e f4       	brtc	.+2      	; 0xb44 <__addsf3+0x28>
+ b42:	e0 95       	com	r30
+ b44:	e7 fb       	bst	r30, 7
+ b46:	0c 94 66 06 	jmp	0xccc	; 0xccc <__fp_inf>
+
+00000b4a <__addsf3x>:
+ b4a:	e9 2f       	mov	r30, r25
+ b4c:	0e 94 8e 06 	call	0xd1c	; 0xd1c <__fp_split3>
+ b50:	58 f3       	brcs	.-42     	; 0xb28 <__addsf3+0xc>
+ b52:	ba 17       	cp	r27, r26
+ b54:	62 07       	cpc	r22, r18
+ b56:	73 07       	cpc	r23, r19
+ b58:	84 07       	cpc	r24, r20
+ b5a:	95 07       	cpc	r25, r21
+ b5c:	20 f0       	brcs	.+8      	; 0xb66 <__addsf3x+0x1c>
+ b5e:	79 f4       	brne	.+30     	; 0xb7e <__addsf3x+0x34>
+ b60:	a6 f5       	brtc	.+104    	; 0xbca <__addsf3x+0x80>
+ b62:	0c 94 b0 06 	jmp	0xd60	; 0xd60 <__fp_zero>
+ b66:	0e f4       	brtc	.+2      	; 0xb6a <__addsf3x+0x20>
+ b68:	e0 95       	com	r30
+ b6a:	0b 2e       	mov	r0, r27
+ b6c:	ba 2f       	mov	r27, r26
+ b6e:	a0 2d       	mov	r26, r0
+ b70:	0b 01       	movw	r0, r22
+ b72:	b9 01       	movw	r22, r18
+ b74:	90 01       	movw	r18, r0
+ b76:	0c 01       	movw	r0, r24
+ b78:	ca 01       	movw	r24, r20
+ b7a:	a0 01       	movw	r20, r0
+ b7c:	11 24       	eor	r1, r1
+ b7e:	ff 27       	eor	r31, r31
+ b80:	59 1b       	sub	r21, r25
+ b82:	99 f0       	breq	.+38     	; 0xbaa <__addsf3x+0x60>
+ b84:	59 3f       	cpi	r21, 0xF9	; 249
+ b86:	50 f4       	brcc	.+20     	; 0xb9c <__addsf3x+0x52>
+ b88:	50 3e       	cpi	r21, 0xE0	; 224
+ b8a:	68 f1       	brcs	.+90     	; 0xbe6 <__addsf3x+0x9c>
+ b8c:	1a 16       	cp	r1, r26
+ b8e:	f0 40       	sbci	r31, 0x00	; 0
+ b90:	a2 2f       	mov	r26, r18
+ b92:	23 2f       	mov	r18, r19
+ b94:	34 2f       	mov	r19, r20
+ b96:	44 27       	eor	r20, r20
+ b98:	58 5f       	subi	r21, 0xF8	; 248
+ b9a:	f3 cf       	rjmp	.-26     	; 0xb82 <__addsf3x+0x38>
+ b9c:	46 95       	lsr	r20
+ b9e:	37 95       	ror	r19
+ ba0:	27 95       	ror	r18
+ ba2:	a7 95       	ror	r26
+ ba4:	f0 40       	sbci	r31, 0x00	; 0
+ ba6:	53 95       	inc	r21
+ ba8:	c9 f7       	brne	.-14     	; 0xb9c <__addsf3x+0x52>
+ baa:	7e f4       	brtc	.+30     	; 0xbca <__addsf3x+0x80>
+ bac:	1f 16       	cp	r1, r31
+ bae:	ba 0b       	sbc	r27, r26
+ bb0:	62 0b       	sbc	r22, r18
+ bb2:	73 0b       	sbc	r23, r19
+ bb4:	84 0b       	sbc	r24, r20
+ bb6:	ba f0       	brmi	.+46     	; 0xbe6 <__addsf3x+0x9c>
+ bb8:	91 50       	subi	r25, 0x01	; 1
+ bba:	a1 f0       	breq	.+40     	; 0xbe4 <__addsf3x+0x9a>
+ bbc:	ff 0f       	add	r31, r31
+ bbe:	bb 1f       	adc	r27, r27
+ bc0:	66 1f       	adc	r22, r22
+ bc2:	77 1f       	adc	r23, r23
+ bc4:	88 1f       	adc	r24, r24
+ bc6:	c2 f7       	brpl	.-16     	; 0xbb8 <__addsf3x+0x6e>
+ bc8:	0e c0       	rjmp	.+28     	; 0xbe6 <__addsf3x+0x9c>
+ bca:	ba 0f       	add	r27, r26
+ bcc:	62 1f       	adc	r22, r18
+ bce:	73 1f       	adc	r23, r19
+ bd0:	84 1f       	adc	r24, r20
+ bd2:	48 f4       	brcc	.+18     	; 0xbe6 <__addsf3x+0x9c>
+ bd4:	87 95       	ror	r24
+ bd6:	77 95       	ror	r23
+ bd8:	67 95       	ror	r22
+ bda:	b7 95       	ror	r27
+ bdc:	f7 95       	ror	r31
+ bde:	9e 3f       	cpi	r25, 0xFE	; 254
+ be0:	08 f0       	brcs	.+2      	; 0xbe4 <__addsf3x+0x9a>
+ be2:	b0 cf       	rjmp	.-160    	; 0xb44 <__addsf3+0x28>
+ be4:	93 95       	inc	r25
+ be6:	88 0f       	add	r24, r24
+ be8:	08 f0       	brcs	.+2      	; 0xbec <__addsf3x+0xa2>
+ bea:	99 27       	eor	r25, r25
+ bec:	ee 0f       	add	r30, r30
+ bee:	97 95       	ror	r25
+ bf0:	87 95       	ror	r24
+ bf2:	08 95       	ret
+
+00000bf4 <__fixunssfsi>:
+ bf4:	0e 94 96 06 	call	0xd2c	; 0xd2c <__fp_splitA>
+ bf8:	88 f0       	brcs	.+34     	; 0xc1c <__fixunssfsi+0x28>
+ bfa:	9f 57       	subi	r25, 0x7F	; 127
+ bfc:	98 f0       	brcs	.+38     	; 0xc24 <__fixunssfsi+0x30>
+ bfe:	b9 2f       	mov	r27, r25
+ c00:	99 27       	eor	r25, r25
+ c02:	b7 51       	subi	r27, 0x17	; 23
+ c04:	b0 f0       	brcs	.+44     	; 0xc32 <__fixunssfsi+0x3e>
+ c06:	e1 f0       	breq	.+56     	; 0xc40 <__fixunssfsi+0x4c>
+ c08:	66 0f       	add	r22, r22
+ c0a:	77 1f       	adc	r23, r23
+ c0c:	88 1f       	adc	r24, r24
+ c0e:	99 1f       	adc	r25, r25
+ c10:	1a f0       	brmi	.+6      	; 0xc18 <__fixunssfsi+0x24>
+ c12:	ba 95       	dec	r27
+ c14:	c9 f7       	brne	.-14     	; 0xc08 <__fixunssfsi+0x14>
+ c16:	14 c0       	rjmp	.+40     	; 0xc40 <__fixunssfsi+0x4c>
+ c18:	b1 30       	cpi	r27, 0x01	; 1
+ c1a:	91 f0       	breq	.+36     	; 0xc40 <__fixunssfsi+0x4c>
+ c1c:	0e 94 b0 06 	call	0xd60	; 0xd60 <__fp_zero>
+ c20:	b1 e0       	ldi	r27, 0x01	; 1
+ c22:	08 95       	ret
+ c24:	0c 94 b0 06 	jmp	0xd60	; 0xd60 <__fp_zero>
+ c28:	67 2f       	mov	r22, r23
+ c2a:	78 2f       	mov	r23, r24
+ c2c:	88 27       	eor	r24, r24
+ c2e:	b8 5f       	subi	r27, 0xF8	; 248
+ c30:	39 f0       	breq	.+14     	; 0xc40 <__fixunssfsi+0x4c>
+ c32:	b9 3f       	cpi	r27, 0xF9	; 249
+ c34:	cc f3       	brlt	.-14     	; 0xc28 <__fixunssfsi+0x34>
+ c36:	86 95       	lsr	r24
+ c38:	77 95       	ror	r23
+ c3a:	67 95       	ror	r22
+ c3c:	b3 95       	inc	r27
+ c3e:	d9 f7       	brne	.-10     	; 0xc36 <__fixunssfsi+0x42>
+ c40:	3e f4       	brtc	.+14     	; 0xc50 <__fixunssfsi+0x5c>
+ c42:	90 95       	com	r25
+ c44:	80 95       	com	r24
+ c46:	70 95       	com	r23
+ c48:	61 95       	neg	r22
+ c4a:	7f 4f       	sbci	r23, 0xFF	; 255
+ c4c:	8f 4f       	sbci	r24, 0xFF	; 255
+ c4e:	9f 4f       	sbci	r25, 0xFF	; 255
+ c50:	08 95       	ret
+
+00000c52 <__floatunsisf>:
+ c52:	e8 94       	clt
+ c54:	09 c0       	rjmp	.+18     	; 0xc68 <__floatsisf+0x12>
+
+00000c56 <__floatsisf>:
+ c56:	97 fb       	bst	r25, 7
+ c58:	3e f4       	brtc	.+14     	; 0xc68 <__floatsisf+0x12>
+ c5a:	90 95       	com	r25
+ c5c:	80 95       	com	r24
+ c5e:	70 95       	com	r23
+ c60:	61 95       	neg	r22
+ c62:	7f 4f       	sbci	r23, 0xFF	; 255
+ c64:	8f 4f       	sbci	r24, 0xFF	; 255
+ c66:	9f 4f       	sbci	r25, 0xFF	; 255
+ c68:	99 23       	and	r25, r25
+ c6a:	a9 f0       	breq	.+42     	; 0xc96 <__floatsisf+0x40>
+ c6c:	f9 2f       	mov	r31, r25
+ c6e:	96 e9       	ldi	r25, 0x96	; 150
+ c70:	bb 27       	eor	r27, r27
+ c72:	93 95       	inc	r25
+ c74:	f6 95       	lsr	r31
+ c76:	87 95       	ror	r24
+ c78:	77 95       	ror	r23
+ c7a:	67 95       	ror	r22
+ c7c:	b7 95       	ror	r27
+ c7e:	f1 11       	cpse	r31, r1
+ c80:	f8 cf       	rjmp	.-16     	; 0xc72 <__floatsisf+0x1c>
+ c82:	fa f4       	brpl	.+62     	; 0xcc2 <__floatsisf+0x6c>
+ c84:	bb 0f       	add	r27, r27
+ c86:	11 f4       	brne	.+4      	; 0xc8c <__floatsisf+0x36>
+ c88:	60 ff       	sbrs	r22, 0
+ c8a:	1b c0       	rjmp	.+54     	; 0xcc2 <__floatsisf+0x6c>
+ c8c:	6f 5f       	subi	r22, 0xFF	; 255
+ c8e:	7f 4f       	sbci	r23, 0xFF	; 255
+ c90:	8f 4f       	sbci	r24, 0xFF	; 255
+ c92:	9f 4f       	sbci	r25, 0xFF	; 255
+ c94:	16 c0       	rjmp	.+44     	; 0xcc2 <__floatsisf+0x6c>
+ c96:	88 23       	and	r24, r24
+ c98:	11 f0       	breq	.+4      	; 0xc9e <__floatsisf+0x48>
+ c9a:	96 e9       	ldi	r25, 0x96	; 150
+ c9c:	11 c0       	rjmp	.+34     	; 0xcc0 <__floatsisf+0x6a>
+ c9e:	77 23       	and	r23, r23
+ ca0:	21 f0       	breq	.+8      	; 0xcaa <__floatsisf+0x54>
+ ca2:	9e e8       	ldi	r25, 0x8E	; 142
+ ca4:	87 2f       	mov	r24, r23
+ ca6:	76 2f       	mov	r23, r22
+ ca8:	05 c0       	rjmp	.+10     	; 0xcb4 <__floatsisf+0x5e>
+ caa:	66 23       	and	r22, r22
+ cac:	71 f0       	breq	.+28     	; 0xcca <__floatsisf+0x74>
+ cae:	96 e8       	ldi	r25, 0x86	; 134
+ cb0:	86 2f       	mov	r24, r22
+ cb2:	70 e0       	ldi	r23, 0x00	; 0
+ cb4:	60 e0       	ldi	r22, 0x00	; 0
+ cb6:	2a f0       	brmi	.+10     	; 0xcc2 <__floatsisf+0x6c>
+ cb8:	9a 95       	dec	r25
+ cba:	66 0f       	add	r22, r22
+ cbc:	77 1f       	adc	r23, r23
+ cbe:	88 1f       	adc	r24, r24
+ cc0:	da f7       	brpl	.-10     	; 0xcb8 <__floatsisf+0x62>
+ cc2:	88 0f       	add	r24, r24
+ cc4:	96 95       	lsr	r25
+ cc6:	87 95       	ror	r24
+ cc8:	97 f9       	bld	r25, 7
+ cca:	08 95       	ret
+
+00000ccc <__fp_inf>:
+ ccc:	97 f9       	bld	r25, 7
+ cce:	9f 67       	ori	r25, 0x7F	; 127
+ cd0:	80 e8       	ldi	r24, 0x80	; 128
+ cd2:	70 e0       	ldi	r23, 0x00	; 0
+ cd4:	60 e0       	ldi	r22, 0x00	; 0
+ cd6:	08 95       	ret
+
+00000cd8 <__fp_nan>:
+ cd8:	9f ef       	ldi	r25, 0xFF	; 255
+ cda:	80 ec       	ldi	r24, 0xC0	; 192
+ cdc:	08 95       	ret
+
+00000cde <__fp_pscA>:
+ cde:	00 24       	eor	r0, r0
+ ce0:	0a 94       	dec	r0
+ ce2:	16 16       	cp	r1, r22
+ ce4:	17 06       	cpc	r1, r23
+ ce6:	18 06       	cpc	r1, r24
+ ce8:	09 06       	cpc	r0, r25
+ cea:	08 95       	ret
+
+00000cec <__fp_pscB>:
+ cec:	00 24       	eor	r0, r0
+ cee:	0a 94       	dec	r0
+ cf0:	12 16       	cp	r1, r18
+ cf2:	13 06       	cpc	r1, r19
+ cf4:	14 06       	cpc	r1, r20
+ cf6:	05 06       	cpc	r0, r21
+ cf8:	08 95       	ret
+
+00000cfa <__fp_round>:
+ cfa:	09 2e       	mov	r0, r25
+ cfc:	03 94       	inc	r0
+ cfe:	00 0c       	add	r0, r0
+ d00:	11 f4       	brne	.+4      	; 0xd06 <__fp_round+0xc>
+ d02:	88 23       	and	r24, r24
+ d04:	52 f0       	brmi	.+20     	; 0xd1a <__fp_round+0x20>
+ d06:	bb 0f       	add	r27, r27
+ d08:	40 f4       	brcc	.+16     	; 0xd1a <__fp_round+0x20>
+ d0a:	bf 2b       	or	r27, r31
+ d0c:	11 f4       	brne	.+4      	; 0xd12 <__fp_round+0x18>
+ d0e:	60 ff       	sbrs	r22, 0
+ d10:	04 c0       	rjmp	.+8      	; 0xd1a <__fp_round+0x20>
+ d12:	6f 5f       	subi	r22, 0xFF	; 255
+ d14:	7f 4f       	sbci	r23, 0xFF	; 255
+ d16:	8f 4f       	sbci	r24, 0xFF	; 255
+ d18:	9f 4f       	sbci	r25, 0xFF	; 255
+ d1a:	08 95       	ret
+
+00000d1c <__fp_split3>:
+ d1c:	57 fd       	sbrc	r21, 7
+ d1e:	90 58       	subi	r25, 0x80	; 128
+ d20:	44 0f       	add	r20, r20
+ d22:	55 1f       	adc	r21, r21
+ d24:	59 f0       	breq	.+22     	; 0xd3c <__fp_splitA+0x10>
+ d26:	5f 3f       	cpi	r21, 0xFF	; 255
+ d28:	71 f0       	breq	.+28     	; 0xd46 <__fp_splitA+0x1a>
+ d2a:	47 95       	ror	r20
+
+00000d2c <__fp_splitA>:
+ d2c:	88 0f       	add	r24, r24
+ d2e:	97 fb       	bst	r25, 7
+ d30:	99 1f       	adc	r25, r25
+ d32:	61 f0       	breq	.+24     	; 0xd4c <__fp_splitA+0x20>
+ d34:	9f 3f       	cpi	r25, 0xFF	; 255
+ d36:	79 f0       	breq	.+30     	; 0xd56 <__fp_splitA+0x2a>
+ d38:	87 95       	ror	r24
+ d3a:	08 95       	ret
+ d3c:	12 16       	cp	r1, r18
+ d3e:	13 06       	cpc	r1, r19
+ d40:	14 06       	cpc	r1, r20
+ d42:	55 1f       	adc	r21, r21
+ d44:	f2 cf       	rjmp	.-28     	; 0xd2a <__fp_split3+0xe>
+ d46:	46 95       	lsr	r20
+ d48:	f1 df       	rcall	.-30     	; 0xd2c <__fp_splitA>
+ d4a:	08 c0       	rjmp	.+16     	; 0xd5c <__fp_splitA+0x30>
+ d4c:	16 16       	cp	r1, r22
+ d4e:	17 06       	cpc	r1, r23
+ d50:	18 06       	cpc	r1, r24
+ d52:	99 1f       	adc	r25, r25
+ d54:	f1 cf       	rjmp	.-30     	; 0xd38 <__fp_splitA+0xc>
+ d56:	86 95       	lsr	r24
+ d58:	71 05       	cpc	r23, r1
+ d5a:	61 05       	cpc	r22, r1
+ d5c:	08 94       	sec
+ d5e:	08 95       	ret
+
+00000d60 <__fp_zero>:
+ d60:	e8 94       	clt
+
+00000d62 <__fp_szero>:
+ d62:	bb 27       	eor	r27, r27
+ d64:	66 27       	eor	r22, r22
+ d66:	77 27       	eor	r23, r23
+ d68:	cb 01       	movw	r24, r22
+ d6a:	97 f9       	bld	r25, 7
+ d6c:	08 95       	ret
+
+00000d6e <__mulsf3>:
+ d6e:	0e 94 ca 06 	call	0xd94	; 0xd94 <__mulsf3x>
+ d72:	0c 94 7d 06 	jmp	0xcfa	; 0xcfa <__fp_round>
+ d76:	0e 94 6f 06 	call	0xcde	; 0xcde <__fp_pscA>
+ d7a:	38 f0       	brcs	.+14     	; 0xd8a <__mulsf3+0x1c>
+ d7c:	0e 94 76 06 	call	0xcec	; 0xcec <__fp_pscB>
+ d80:	20 f0       	brcs	.+8      	; 0xd8a <__mulsf3+0x1c>
+ d82:	95 23       	and	r25, r21
+ d84:	11 f0       	breq	.+4      	; 0xd8a <__mulsf3+0x1c>
+ d86:	0c 94 66 06 	jmp	0xccc	; 0xccc <__fp_inf>
+ d8a:	0c 94 6c 06 	jmp	0xcd8	; 0xcd8 <__fp_nan>
+ d8e:	11 24       	eor	r1, r1
+ d90:	0c 94 b1 06 	jmp	0xd62	; 0xd62 <__fp_szero>
+
+00000d94 <__mulsf3x>:
+ d94:	0e 94 8e 06 	call	0xd1c	; 0xd1c <__fp_split3>
+ d98:	70 f3       	brcs	.-36     	; 0xd76 <__mulsf3+0x8>
+
+00000d9a <__mulsf3_pse>:
+ d9a:	95 9f       	mul	r25, r21
+ d9c:	c1 f3       	breq	.-16     	; 0xd8e <__mulsf3+0x20>
+ d9e:	95 0f       	add	r25, r21
+ da0:	50 e0       	ldi	r21, 0x00	; 0
+ da2:	55 1f       	adc	r21, r21
+ da4:	62 9f       	mul	r22, r18
+ da6:	f0 01       	movw	r30, r0
+ da8:	72 9f       	mul	r23, r18
+ daa:	bb 27       	eor	r27, r27
+ dac:	f0 0d       	add	r31, r0
+ dae:	b1 1d       	adc	r27, r1
+ db0:	63 9f       	mul	r22, r19
+ db2:	aa 27       	eor	r26, r26
+ db4:	f0 0d       	add	r31, r0
+ db6:	b1 1d       	adc	r27, r1
+ db8:	aa 1f       	adc	r26, r26
+ dba:	64 9f       	mul	r22, r20
+ dbc:	66 27       	eor	r22, r22
+ dbe:	b0 0d       	add	r27, r0
+ dc0:	a1 1d       	adc	r26, r1
+ dc2:	66 1f       	adc	r22, r22
+ dc4:	82 9f       	mul	r24, r18
+ dc6:	22 27       	eor	r18, r18
+ dc8:	b0 0d       	add	r27, r0
+ dca:	a1 1d       	adc	r26, r1
+ dcc:	62 1f       	adc	r22, r18
+ dce:	73 9f       	mul	r23, r19
+ dd0:	b0 0d       	add	r27, r0
+ dd2:	a1 1d       	adc	r26, r1
+ dd4:	62 1f       	adc	r22, r18
+ dd6:	83 9f       	mul	r24, r19
+ dd8:	a0 0d       	add	r26, r0
+ dda:	61 1d       	adc	r22, r1
+ ddc:	22 1f       	adc	r18, r18
+ dde:	74 9f       	mul	r23, r20
+ de0:	33 27       	eor	r19, r19
+ de2:	a0 0d       	add	r26, r0
+ de4:	61 1d       	adc	r22, r1
+ de6:	23 1f       	adc	r18, r19
+ de8:	84 9f       	mul	r24, r20
+ dea:	60 0d       	add	r22, r0
+ dec:	21 1d       	adc	r18, r1
+ dee:	82 2f       	mov	r24, r18
+ df0:	76 2f       	mov	r23, r22
+ df2:	6a 2f       	mov	r22, r26
+ df4:	11 24       	eor	r1, r1
+ df6:	9f 57       	subi	r25, 0x7F	; 127
+ df8:	50 40       	sbci	r21, 0x00	; 0
+ dfa:	9a f0       	brmi	.+38     	; 0xe22 <__mulsf3_pse+0x88>
+ dfc:	f1 f0       	breq	.+60     	; 0xe3a <__mulsf3_pse+0xa0>
+ dfe:	88 23       	and	r24, r24
+ e00:	4a f0       	brmi	.+18     	; 0xe14 <__mulsf3_pse+0x7a>
+ e02:	ee 0f       	add	r30, r30
+ e04:	ff 1f       	adc	r31, r31
+ e06:	bb 1f       	adc	r27, r27
+ e08:	66 1f       	adc	r22, r22
+ e0a:	77 1f       	adc	r23, r23
+ e0c:	88 1f       	adc	r24, r24
+ e0e:	91 50       	subi	r25, 0x01	; 1
+ e10:	50 40       	sbci	r21, 0x00	; 0
+ e12:	a9 f7       	brne	.-22     	; 0xdfe <__mulsf3_pse+0x64>
+ e14:	9e 3f       	cpi	r25, 0xFE	; 254
+ e16:	51 05       	cpc	r21, r1
+ e18:	80 f0       	brcs	.+32     	; 0xe3a <__mulsf3_pse+0xa0>
+ e1a:	0c 94 66 06 	jmp	0xccc	; 0xccc <__fp_inf>
+ e1e:	0c 94 b1 06 	jmp	0xd62	; 0xd62 <__fp_szero>
+ e22:	5f 3f       	cpi	r21, 0xFF	; 255
+ e24:	e4 f3       	brlt	.-8      	; 0xe1e <__mulsf3_pse+0x84>
+ e26:	98 3e       	cpi	r25, 0xE8	; 232
+ e28:	d4 f3       	brlt	.-12     	; 0xe1e <__mulsf3_pse+0x84>
+ e2a:	86 95       	lsr	r24
+ e2c:	77 95       	ror	r23
+ e2e:	67 95       	ror	r22
+ e30:	b7 95       	ror	r27
+ e32:	f7 95       	ror	r31
+ e34:	e7 95       	ror	r30
+ e36:	9f 5f       	subi	r25, 0xFF	; 255
+ e38:	c1 f7       	brne	.-16     	; 0xe2a <__mulsf3_pse+0x90>
+ e3a:	fe 2b       	or	r31, r30
+ e3c:	88 0f       	add	r24, r24
+ e3e:	91 1d       	adc	r25, r1
+ e40:	96 95       	lsr	r25
+ e42:	87 95       	ror	r24
+ e44:	97 f9       	bld	r25, 7
+ e46:	08 95       	ret
+
+00000e48 <__udivmodsi4>:
+ e48:	a1 e2       	ldi	r26, 0x21	; 33
+ e4a:	1a 2e       	mov	r1, r26
+ e4c:	aa 1b       	sub	r26, r26
+ e4e:	bb 1b       	sub	r27, r27
+ e50:	fd 01       	movw	r30, r26
+ e52:	0d c0       	rjmp	.+26     	; 0xe6e <__udivmodsi4_ep>
+
+00000e54 <__udivmodsi4_loop>:
+ e54:	aa 1f       	adc	r26, r26
+ e56:	bb 1f       	adc	r27, r27
+ e58:	ee 1f       	adc	r30, r30
+ e5a:	ff 1f       	adc	r31, r31
+ e5c:	a2 17       	cp	r26, r18
+ e5e:	b3 07       	cpc	r27, r19
+ e60:	e4 07       	cpc	r30, r20
+ e62:	f5 07       	cpc	r31, r21
+ e64:	20 f0       	brcs	.+8      	; 0xe6e <__udivmodsi4_ep>
+ e66:	a2 1b       	sub	r26, r18
+ e68:	b3 0b       	sbc	r27, r19
+ e6a:	e4 0b       	sbc	r30, r20
+ e6c:	f5 0b       	sbc	r31, r21
+
+00000e6e <__udivmodsi4_ep>:
+ e6e:	66 1f       	adc	r22, r22
+ e70:	77 1f       	adc	r23, r23
+ e72:	88 1f       	adc	r24, r24
+ e74:	99 1f       	adc	r25, r25
+ e76:	1a 94       	dec	r1
+ e78:	69 f7       	brne	.-38     	; 0xe54 <__udivmodsi4_loop>
+ e7a:	60 95       	com	r22
+ e7c:	70 95       	com	r23
+ e7e:	80 95       	com	r24
+ e80:	90 95       	com	r25
+ e82:	9b 01       	movw	r18, r22
+ e84:	ac 01       	movw	r20, r24
+ e86:	bd 01       	movw	r22, r26
+ e88:	cf 01       	movw	r24, r30
+ e8a:	08 95       	ret
+
+00000e8c <_exit>:
+ e8c:	f8 94       	cli
+
+00000e8e <__stop_program>:
+ e8e:	ff cf       	rjmp	.-2      	; 0xe8e <__stop_program>
