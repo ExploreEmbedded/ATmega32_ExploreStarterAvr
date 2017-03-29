@@ -60,6 +60,26 @@ int main()
 {
   
     char option; 
+	
+	GPIO_PinDirection(SWITCH1,INPUT);
+	GPIO_PinDirection(SWITCH2,INPUT);
+	
+	if((GPIO_PinRead(SWITCH1)==1) && (GPIO_PinRead(SWITCH2)==1))
+	{
+	   		GPIO_PinDirection(LED1,OUTPUT);
+	   		GPIO_PinDirection(LED2,OUTPUT);
+			   
+			   while(1)
+			   {
+				   	GPIO_PinWrite(LED1,1);
+				   	GPIO_PinWrite(LED2,1);
+					DELAY_ms(250);			  
+					
+					GPIO_PinWrite(LED1,0);
+					GPIO_PinWrite(LED2,0);
+					DELAY_ms(250);
+			   }
+	}
       
     UART_Init(9600);
     UART_Printf("\n\r\n\rStarter AVR test Menu\n\r 1.Led test\n\r 2.Lcd test\n\r 3.Switch test\n\r 4.Adc Test\n\r 5.Eeprom Test \n\rSelect One of the above options");
