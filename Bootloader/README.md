@@ -1,10 +1,16 @@
 Serial bootloader for Atmega32
 
 Fuse Bits:
+
 low_fuses=0xff
+
 high_fuses=0xde
+
 extended_fuses=0x00
+
 lock_bits=0x0F
+
+
 
 Baud Rate=19200
 
